@@ -33,3 +33,4 @@ class CategorySeeder extends Seeder
     // LANCIARE I SEEDER
     // php artisan db:seed CategorySeeder
 }
+
