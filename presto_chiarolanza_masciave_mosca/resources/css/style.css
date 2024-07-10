@@ -1,0 +1,37 @@
+:root{
+    --main:#F1FAEE;
+    --sec:#000000;
+    --ter:#3A0CA3;
+    --quar:#F5A65B;
+
+}
+
+body{
+background-color: var(--main);
+color: var(--sec);
+
+
+}
+
+nav{
+    background-color: var(--main);
+}
+
+.navbar-brand, .nav-link{
+    color: var(--quar);
+}
+
+.navbar-brand:hover, .nav-link:hover{
+    color: var(--ter);
+}
+
+
+.btn-quar{
+    color: var(--quar);
+    border:1px solid var(--quar) ;
+}
+
+.btn-quar:hover{
+    background-color: var(--quar);
+    color: var(--ter);
+}

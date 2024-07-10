@@ -1,6 +1,6 @@
 @import "bootstrap";
 @import "bootstrap-icons";
-
+@import 'style.css';
 @import "masthead.css";
 
 @import 'aos/dist/aos.css';

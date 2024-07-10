@@ -1,0 +1,7 @@
+.masthead{
+    height: 60vh;
+    background-image: url('/public/background/hero-slide-1.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: right;
+}
