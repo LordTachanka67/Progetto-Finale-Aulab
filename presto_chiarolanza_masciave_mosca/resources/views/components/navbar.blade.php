@@ -14,10 +14,16 @@
             <a class="nav-link" href="{{route('login')}}">Login</a>
           </li>              
           @endguest
+
+
           @auth  
           <form action="{{route('logout')}}" method="POST">
             @csrf <button class="nav-link">Logout</button>
           </form>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('articles.create')}}">INSERISCI ANNUNCIO</a>
+          </li>    
           @endauth
 
           {{-- DROPDOWN --}}

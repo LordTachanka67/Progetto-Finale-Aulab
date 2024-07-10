@@ -1,5 +1,7 @@
 <x-layout>
 
-<x-masthead/>
+<x-masthead
+h1='HOME'
+/>
 
 </x-layout>
