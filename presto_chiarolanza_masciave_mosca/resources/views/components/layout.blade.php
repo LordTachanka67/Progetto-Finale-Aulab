@@ -8,8 +8,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+    <x-navbar/>
     <div class="min-vh-100">
+        <x-flashmessage/>
     {{$slot}}
     </div>
+    <x-footer/>
 </body>
 </html>
