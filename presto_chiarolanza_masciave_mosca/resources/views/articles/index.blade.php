@@ -2,7 +2,7 @@
 
     <x-masthead h1='Tutti gli articoli' />
     <div class="container">
-        <div class="row gap-1  justify-content-center justify-content-around">
+        <div class="row gap-1  justify-content-center justify-content-evenly">
             @if ($articles->isEmpty())
                 <p>Non ci sono articoli</p>
             @else

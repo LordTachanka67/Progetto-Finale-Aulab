@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-masthead h1='HOME' />
+    <x-masthead h1='Presto.it'/>
     <div class="container">
         <div class="row gap-1  justify-content-center justify-content-around">
             @if ($articles->isEmpty())

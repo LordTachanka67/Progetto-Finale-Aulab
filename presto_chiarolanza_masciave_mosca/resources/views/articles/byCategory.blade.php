@@ -15,9 +15,9 @@
             @endif
         </div>
         <div class="d-flex justify-content-center">
-            {{-- <div class="col-12">
+            <div class="col-12">
                 {{$articles->links() }}
-            </div> --}}
+            </div>
         </div>
     </div>
 </x-layout>
