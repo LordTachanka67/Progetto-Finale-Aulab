@@ -52,3 +52,9 @@ padding: 30px;
 label{
     color: var(--quar);
 }
+
+.badge{
+    background-color: #3A0CA3;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
