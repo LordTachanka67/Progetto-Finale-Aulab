@@ -1,59 +1,75 @@
-:root{
-    --main:rgb(241, 250, 238);
-    --sec:#000000;
-    --ter:#3A0CA3;
-    --quar:#f5a65b;
+:root {
+    --main: rgb(241, 250, 238);
+    --sec: #000000;
+    --ter: #3A0CA3;
+    --quar: #f5a65b;
 
 }
 
-body{
-background-color: var(--main);
-color: var(--sec);
-overflow-x: hidden;
-font-family:  "Quicksand", sans-serif;;
+body {
+    background-color: var(--main);
+    color: var(--sec);
+    overflow-x: auto;
+    font-family: "Quicksand", sans-serif;
 }
 
 
-
-
-.btn-quar{
+.btn-quar {
     color: var(--quar);
-    border:1px solid var(--quar) ;
+    border: 1px solid var(--quar);
 }
 
-.btn-quar:hover{
+.btn-quar:hover {
     background-color: var(--quar);
     color: var(--main);
 }
 
-h1{
+h1 {
     color: var(--quar);
-    font-weight: bold ;
-/* text shadow */
-text-shadow: 0px 4px 7px rgba(000, 000, 000, 0.81);
+    font-weight: bold;
+    /* text shadow */
+    text-shadow: 0px 4px 7px rgba(000, 000, 000, 0.81);
 
     /* From https://css.glass */
-background: rgba(245, 166, 91, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(245, 166, 91, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-/* border: 1px solid rgba(255, 255, 255, 0.3); */
-padding: 30px;
+    background: rgba(245, 166, 91, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(245, 166, 91, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    padding: 30px;
 
 }
 
-h2, h3, .card-title{
+h2,
+h3,
+.card-title {
     color: var(--quar);
     font-weight: bold;
 }
 
-label{
+label {
     color: var(--quar);
 }
 
-.badge{
+.badge ,.badge>a {
     background-color: #3A0CA3;
     margin-top: 15px;
     margin-bottom: 15px;
+    text-decoration: none;
+    color: var(--main);
+}
+
+.custom-margin-top {
+    margin-top: 15rem;
+}
+
+
+
+.show-path>span>a,
+.show-path {
+    text-decoration: none;
+    color: var(--quar);
+    font-weight: bold;
+
 }

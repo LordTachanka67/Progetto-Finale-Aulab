@@ -3,5 +3,34 @@
 @import 'style.css';
 @import "masthead.css";
 @import 'navbar.css';
+@import 'scrollbar.css';
+
 
 @import 'aos/dist/aos.css';
+
+
+ ul.pagination{
+
+justify-content: center;
+box-shadow: none !important;
+
+}
+/*
+a.page-link  {
+    background-color: var(--main) ;
+    color: var(--quar) !important;
+}
+
+
+span.page-link{
+    background-color: var(--quar) !important;
+    color: var(--main) !important;
+}
+
+.page-item.active{
+    background-color: var(--main) !important;
+    color: var(--quar) !important;
+} */
+/* li.page-item{
+    color: var(--quar);
+} */

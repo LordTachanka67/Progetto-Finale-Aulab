@@ -1,7 +1,10 @@
 <x-layout>
-    <div class="container my-5">
+    <div class="container custom-margin-top">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
+
+                <h1 class="text-center mb-3">Crea il tuo account</h1>
+
                 @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -11,6 +14,7 @@
                     </ul>
                 </div>
                 @endif
+
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="form-floating mb-3">

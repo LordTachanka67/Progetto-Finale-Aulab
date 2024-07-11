@@ -1,4 +1,4 @@
-nav{
+#nav{
     background-color: var(--main);
     box-shadow: 0 4px 30px #f5a65b1a !important;
     z-index: 99;
@@ -12,9 +12,10 @@ nav{
     color: var(--ter);
 }
 
-.nav-sec{
+.nav-sec , .scrollmenu{
     background-color: var(--quar) !important;
-    margin-top: 70px;
+    padding-top: 7px;
+    margin-top: 65px;
     z-index: 1;
 }
 

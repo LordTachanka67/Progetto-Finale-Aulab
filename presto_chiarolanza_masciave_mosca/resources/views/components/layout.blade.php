@@ -14,7 +14,7 @@
 </head>
 <body>
     <x-navbar/>
-    <div class="min-vh-100">
+    <div class="min-vh-100 ">
         <x-flashmessage/>
     {{$slot}}
     </div>
