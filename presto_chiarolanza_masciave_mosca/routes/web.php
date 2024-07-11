@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,6 +13,8 @@ Route::get('/',[PublicController::class , 'homepage'])->name('homepage');
 
 /* ROTTE PER CATEGORIE */
 /* route::get('/categories/create',[ArticleController::class,'createCategory'])->name('categories.create'); */
+
+Route::get('/categories/{category}', [CategoryController::class, 'byCategory'])->name('categories.byCategory');
 
 /* ROTTE PER ARTICOLI */
 Route::middleware(['auth'])->group(function () {

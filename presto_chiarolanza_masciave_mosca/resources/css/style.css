@@ -9,20 +9,9 @@
 body{
 background-color: var(--main);
 color: var(--sec);
+overflow-x: hidden;
 
 
-}
-
-nav{
-    background-color: var(--main);
-}
-
-.navbar-brand, .nav-link{
-    color: var(--quar);
-}
-
-.navbar-brand:hover, .nav-link:hover{
-    color: var(--ter);
 }
 
 

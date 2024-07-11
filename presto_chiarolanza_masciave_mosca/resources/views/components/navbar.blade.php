@@ -9,9 +9,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{route('articles.index')}}">Tutti gli articoli</a>
-          </li>
+          
           @guest
           <li class="nav-item">
             <a class="nav-link" href="{{route('login')}}">Login</a>
@@ -22,12 +20,12 @@
           <form action="{{route('logout')}}" method="POST">
             @csrf <button class="nav-link">Logout</button>
           </form>
-
+          
           <li class="nav-item">
             <a class="nav-link" href="{{route('articles.create')}}">INSERISCI ANNUNCIO</a>
           </li>    
           @endauth
-
+          
           {{-- DROPDOWN --}}
           {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,8 +38,8 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li> --}}
-
-
+          
+          
           
         </ul>
         <form class="d-flex" role="search">
@@ -51,3 +49,43 @@
       </div>
     </div>
   </nav>
+
+  
+  {{-- <div class="navbar navbar-expand-lg ">
+    <div class="container-fluid nav-sec nav-text">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="{{route('articles.index')}}">Tutti gli articoli</a>
+      </li>
+
+      @foreach ($categories as $category)
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="{{route('categories.byCategory', compact('category'))}}">{{$category->name}}</a>
+      </li>
+      @endforeach
+    </ul>
+    </div>
+  </div> --}}
+
+  <nav class="navbar navbar-expand-lg nav-sec">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse row" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link nav-sec-btn" aria-current="page" href="{{route('articles.index')}}">Tutti gli articoli</a>          
+          </li>
+          @foreach ($categories as $category)
+          <li class="nav-item ">
+            <a class="nav-link nav-sec-btn text-truncate" aria-current="page" href="{{route('categories.byCategory', compact('category'))}}">{{$category->name}}</a>
+          </li>
+          @endforeach
+
+        </ul> 
+      </div>
+    </div>
+  </nav>
+
+

@@ -1,0 +1,21 @@
+nav{
+    background-color: var(--main);
+}
+
+.navbar-brand, .nav-link{
+    color: var(--quar);
+}
+
+.navbar-brand:hover, .nav-link:hover{
+    color: var(--ter);
+}
+
+.nav-sec{
+    background-color: var(--quar) !important;
+}
+
+.nav-sec-btn{
+    color: var(--main);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
