@@ -28,9 +28,9 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ArticleCreateRequest $request)
+  /*   public function store(ArticleCreateRequest $request)
     {
-        /* dd($request->all()); */
+        dd($request->all());
 
         Auth::user()->articles()->create([
             'title' => $request->title,
@@ -40,7 +40,7 @@ class ArticleController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Articolo creato con successo!');
-    }
+    } */
 
     /**
      * Display the specified resource.

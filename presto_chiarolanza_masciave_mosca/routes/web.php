@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('homepage');
+
+Route::get('/',[PublicController::class , 'homepage'])->name('homepage');
 
 /* ROTTE PER CATEGORIE */
 /* route::get('/categories/create',[ArticleController::class,'createCategory'])->name('categories.create'); */
