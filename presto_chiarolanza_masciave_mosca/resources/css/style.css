@@ -2,7 +2,7 @@
     --main:#F1FAEE;
     --sec:#000000;
     --ter:#3A0CA3;
-    --quar:#F5A65B;
+    --quar:rgb(245, 166, 91);
 
 }
 
@@ -33,5 +33,22 @@ nav{
 
 .btn-quar:hover{
     background-color: var(--quar);
-    color: var(--ter);
+    color: var(--main);
+}
+
+h1{
+    color: var(--quar);
+    /* From https://css.glass */
+background: rgba(245, 166, 91, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(245, 166, 91, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+/* border: 1px solid rgba(255, 255, 255, 0.3); */
+padding: 30px;
+
+}
+
+label{
+    color: var(--quar);
 }
