@@ -19,5 +19,6 @@
     {{$slot}}
     </div>
     <x-footer/>
+    <x-rightOffcanvas/>
 </body>
 </html>
