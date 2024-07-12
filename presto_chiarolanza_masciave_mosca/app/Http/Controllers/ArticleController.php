@@ -47,8 +47,10 @@ class ArticleController extends Controller
      * Display the specified resource.
      */
     public function show(Article $article)
-    {
-        return view('articles.show', compact('article'));
+    {   
+        $correlated = Article::where('category_id', $article->category_id)->paginate(3);
+        // dd($correlated);
+        return view('articles.show', compact('article', 'correlated'));
     }
 
     /**

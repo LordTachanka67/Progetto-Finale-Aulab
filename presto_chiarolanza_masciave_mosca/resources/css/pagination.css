@@ -1,0 +1,18 @@
+ul.pagination{
+
+    justify-content: center;
+    box-shadow: none !important;
+    
+    }
+    
+    a.page-link  {
+        background-color: var(--main) ;
+        color: var(--quar) !important;
+    }
+
+    .page-link.active, .active > .page-link{
+        background-color: var(--quar) !important;
+        border-color: var(--quar);
+        color: var(--main) !important;
+    } 
+    
