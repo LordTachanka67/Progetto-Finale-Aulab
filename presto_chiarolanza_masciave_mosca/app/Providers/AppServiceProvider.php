@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         if(Schema::hasTable('categories')){
-            $categories = Category::all();
+            $categories = Category::orderBy('name')->get();
 
             View::share('categories', $categories);
         }

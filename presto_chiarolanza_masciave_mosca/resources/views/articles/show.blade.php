@@ -62,7 +62,7 @@
                             <div class="card-body text-center">
 
                                 <h5 class="card-title text-truncate text-dark ">{{ $article->title }}</h5>
-                                <p class="card-title text-dark lead">€{{ $article->price }} </p>
+                                <p class="card-title text-dark lead">€{{ number_format($article->price, 2, ',') }} </p>
                             </div>
                         </a>
                     </div>

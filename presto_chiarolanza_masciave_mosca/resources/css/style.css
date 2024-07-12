@@ -65,6 +65,7 @@ label {
     margin-bottom: 15px;
     text-decoration: none;
     color: var(--main);
+    z-index: 1;
 }
 
 .custom-margin-top {
@@ -91,4 +92,8 @@ label {
 .bg-sec{
     background-color: var(--sec);
     color: var(--main);
+}
+
+.text-quar{
+    color: var(--quar);
 }

@@ -8,15 +8,26 @@
     color: var(--quar);
 }
 
-.navbar-brand:hover, .nav-link:hover{
+.navbar-brand:hover{
+    font-weight: bold;
     color: var(--ter);
+}
+
+.nav-link:hover{
+    font-weight: bold;
+    background-color: var(--ter);
+    color: var(--quar);
+}
+
+.buttonUser{
+    background-color: var(--main) !important;  
 }
 
 .nav-sec , .scrollmenu{
     background-color: var(--quar) !important;
     padding-top: 7px;
     margin-top: 65px;
-    z-index: 1;
+    z-index: 20;
 }
 
 .nav-sec-btn{
@@ -29,3 +40,8 @@
     box-shadow: 20px 4px 30px rgba(58, 12, 163, 0.5) !important;
 }
 
+.active{
+    font-weight: bold;
+    background-color: var(--ter);
+    color: var(--quar);
+}

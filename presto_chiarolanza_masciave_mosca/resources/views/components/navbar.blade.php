@@ -19,7 +19,7 @@
                     </li>
                 @endguest
                 @auth
-                    <li class="nav-link">
+                    <li class="nav-link buttonUser">
                         <button class="btn btn-quar" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasUser" aria-controls="offcanvasUser=">Ciao {{ auth()->user()->name }}
                             <i class="bi bi-person-circle"></i></button>
@@ -56,10 +56,22 @@
     </div>
   </div> --}}
 
-<div class="scrollmenu fixed-top  d-flex justify-content-evenly">
+{{-- <div class="scrollmenu fixed-top  d-flex justify-content-evenly">
   <a class="nav-link nav-sec-btn" aria-current="page" href="{{route('articles.index')}}">Tutti gli articoli</a>
     @foreach ($categories as $category)
-        <a class="nav-link nav-sec-btn " aria-current="page"
+        <a class="nav-link nav-sec-btn" aria-current="page"
             href="{{ route('categories.byCategory', compact('category')) }}">{{ $category->name }}</a>
     @endforeach
+</div> --}}
+
+<div class="scrollmenu fixed-top d-flex justify-content-evenly">
+  <a class="nav-link nav-sec-btn {{ Route::currentRouteName() === 'articles.index' ? 'active' : '' }}" aria-current="page" href="{{ route('articles.index') }}">Tutti gli articoli</a>
+  @foreach ($categories as $category)
+    <a class="nav-link nav-sec-btn {{ request()->is('categories/' . $category->id) ? 'active' : '' }}" aria-current="page" href="{{ route('categories.byCategory', ['category' => $category->id]) }}">
+      {{ $category->name }}
+    </a>
+  @endforeach
 </div>
+
+
+

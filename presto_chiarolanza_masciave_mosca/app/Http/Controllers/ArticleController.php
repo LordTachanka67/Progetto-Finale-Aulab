@@ -48,7 +48,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {   
-        $correlated = Article::where('category_id', $article->category_id)->paginate(3);
+        $correlated = Article::where('category_id', $article->category_id)->paginate(4);
         // dd($correlated);
         return view('articles.show', compact('article', 'correlated'));
     }

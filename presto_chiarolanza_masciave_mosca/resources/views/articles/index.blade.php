@@ -8,7 +8,7 @@
             @else
             @foreach ($articles as $article)
                 <div class="col-12 col-md-3">
-                    <x-card :article="$article" />
+                    <x-card-custom :article="$article" />
                 </div>
             @endforeach
                 
