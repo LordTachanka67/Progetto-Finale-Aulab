@@ -23,6 +23,34 @@
     background-color: var(--main) !important;  
 }
 
+.buttonLogin{
+    background-color: var(--main) !important;  
+    color: var(--quar);
+}
+
+.buttonLogin:hover{
+    font-weight: bold;
+    color: var(--ter); 
+}
+
+.buttonOffcanvas{
+    color: var(--quar)
+}
+
+.buttonOffcanvas:hover{
+    background-color: white !important; 
+    color: var(--ter); 
+}
+
+.linkFooter{
+    background-color: var(--main) !important;  
+    color: var(--quar);
+}
+
+.linkFooter:hover{
+    color: var(--ter);
+}
+
 .nav-sec , .scrollmenu{
     background-color: var(--quar) !important;
     padding-top: 7px;
