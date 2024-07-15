@@ -66,7 +66,7 @@ class CategoryController extends Controller
 
     public function byCategory(Category $category){
 
-        $articles= Article::where('category_id', $category->id)->paginate(9);
+        $articles= Article::where('category_id', $category->id)->where('is_accepted', true)->paginate(9);
         // dd($articles);
         return view('articles.byCategory', ['articles' => $articles, 'category' => $category]);
     }

@@ -7,7 +7,7 @@
             @else
             @foreach ($articles_pending as $article)
                 <div class="col-12 col-md-3">
-                    <x-card-custom :article="$article" />
+                    <x-card-pending :article="$article" />
                 </div>
             @endforeach
                 
@@ -15,7 +15,7 @@
         </div>
         <div class="d-flex justify-content-center">
             <div class="col-12">
-                {{ $articles->links() }}
+                {{ $articles_pending->links() }}
             </div>
         </div>
     </div>

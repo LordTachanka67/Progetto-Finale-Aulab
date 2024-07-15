@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('created_at', 'desc')->paginate(9);
+        $articles = Article::orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(9);
         return view('articles.index', compact('articles'));
     }
 
@@ -48,7 +48,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {   
-        $correlated = Article::where('category_id', $article->category_id)->paginate(4);
+        $correlated = Article::where('category_id', $article->category_id)->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(4);
         // dd($correlated);
         return view('articles.show', compact('article', 'correlated'));
     }
