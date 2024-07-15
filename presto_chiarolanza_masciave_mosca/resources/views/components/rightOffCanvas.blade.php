@@ -12,6 +12,11 @@
                                 class="bi bi-plus-square"></i> Inserisci annuncio </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('dashboard') }}"><i
+                                class="bi bi-plus-square"></i> Dashboard </a>
+                    </li>
+
                     @if (auth()->user()->is_revisor)
                     <div>
                       <hr class="mt-5">
