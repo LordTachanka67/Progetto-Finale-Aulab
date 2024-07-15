@@ -35,8 +35,11 @@ Route::get('/lavora-con-noi', [MailController::class, 'revisorForm'])->name('rev
 Route::POST('/lavora-con-noi/invia', [MailController::class, 'revisorApplication'])->name('revisorApplication')->middleware('auth');
 
 /* REVISORE */
-Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
-Route::get('/revisor/{article}', [RevisorController::class, 'show'])->name('revisor.show');
-
-Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('article.reject');
-Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('article.accept');
+Route::middleware(['auth','isRevisor'])->group(function () {
+    Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
+    Route::get('/revisor/{article}', [RevisorController::class, 'show'])->name('revisor.show');
+    
+    Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('article.reject');
+    Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('article.accept');
+    Route::patch('/cancel', [RevisorController::class, 'cancel'])->name('article.cancel');
+});

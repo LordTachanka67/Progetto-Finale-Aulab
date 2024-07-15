@@ -13,10 +13,14 @@
                     </li>
 
                     @if (auth()->user()->is_revisor)
-                        <li class="nav-item">
-                            <a class="nav-link buttonOffcanvas ms-3 mt-5 fs-5" href=" {{ route('revisor.index') }} "><i
-                                    class="bi bi-suitcase-lg"></i> Articoli da revisionare </a>
-                        </li>
+                    <div>
+                      <hr class="mt-5">
+                      <li class="nav-item">
+                          <a class="nav-link buttonOffcanvas ms-3 fs-5" href=" {{ route('revisor.index') }} "><i
+                                  class="bi bi-suitcase-lg"></i> Articoli da revisionare<span class="ms-2 top-0 start-100 translate-middle rounded-pill bg-ter px-3 py-1 text-center">{{$revisor_pending_number}}</span></a>
+                                    
+                      </li>
+                    </div>
                     @else
                         <li class="nav-item">
                             <a class="nav-link buttonOffcanvas ms-3 mt-5 fs-5" href=" {{ route('revisorForm') }} "><i

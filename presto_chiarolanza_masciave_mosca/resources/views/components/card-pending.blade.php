@@ -17,7 +17,7 @@
         
     @else
     <div>
-        <span class="badge position-absolute">categoria: {{$article->category->name}}</span>
+        <span class="badge position-absolute">{{$article->category->name}}</span>
     </div>    
     @endif
     <img src="https://picsum.photos/300/300" class="card-img-top mb-3 position-relative" alt="{{$article->title}}">
