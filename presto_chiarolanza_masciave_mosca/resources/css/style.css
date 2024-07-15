@@ -1,9 +1,16 @@
-:root {
+/* :root {
     --main: rgb(241, 250, 238);
     --sec: #000000;
     --ter: #3A0CA3;
-    --quar: #f5a65b;
+    --quar: rgb(245, 166, 91);
+} */
 
+:root {
+    --main: rgb(241, 250, 238);
+    --sec: #013036;
+    --quar: rgb(1, 117, 130);
+    --ter: rgb(2, 170, 189);
+    --shadow: rgba(1, 73, 81, 0.5);
 }
 
 body {
@@ -25,15 +32,15 @@ body {
 }
 
 h1 {
-    color: var(--quar);
+    color: var(--ter);
     font-weight: bold;
     /* text shadow */
-    text-shadow: 0px 4px 7px rgba(000, 000, 000, 0.81);
+    text-shadow: 0px 4px 7px var(--shadow);
 
     /* From https://css.glass */
-    background: rgba(245, 166, 91, 0.2);
+    background: rgba(1, 117, 130, 0.2);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(245, 166, 91, 0.1);
+    box-shadow: 0 4px 30px var(--shadow);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     /* border: 1px solid rgba(255, 255, 255, 0.3); */
@@ -60,7 +67,7 @@ label {
 }
 
 .badge ,.badge>a {
-    background-color: #3A0CA3;
+    background-color: var(--ter);
     margin-top: 15px;
     margin-bottom: 15px;
     text-decoration: none;
