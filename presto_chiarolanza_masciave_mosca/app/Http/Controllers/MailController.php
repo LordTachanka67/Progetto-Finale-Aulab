@@ -19,7 +19,7 @@ class MailController extends Controller
 
         Mail::to('admin@presto.it')->send($revisorMail);
 
-        return redirect()->back()->with('message', 'Richiesta inviata correttamente');
+        return redirect()->back()->with('success', 'Richiesta inviata correttamente');
     }
 
     public function revisorForm(){

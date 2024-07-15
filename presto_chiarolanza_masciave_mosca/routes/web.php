@@ -5,6 +5,7 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\RevisorController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +30,9 @@ Route::get('/articles/index', [ArticleController::class, 'index'])->name('articl
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
 
-// Revisore
+// Lavora con noi
 Route::get('/lavora-con-noi', [MailController::class, 'revisorForm'])->name('revisorForm')->middleware('auth');
 Route::POST('/lavora-con-noi/invia', [MailController::class, 'revisorApplication'])->name('revisorApplication')->middleware('auth');
+
+/* REVISORE */
+route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
