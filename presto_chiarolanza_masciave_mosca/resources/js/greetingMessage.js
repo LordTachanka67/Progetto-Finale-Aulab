@@ -17,3 +17,4 @@ function updateGreeting() {
 
 // Esegui la funzione per aggiornare il messaggio quando la pagina viene caricata
 updateGreeting();
+

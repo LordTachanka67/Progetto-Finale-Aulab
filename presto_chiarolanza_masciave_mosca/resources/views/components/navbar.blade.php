@@ -19,11 +19,11 @@
                 <input name="query" type="text" class="input-search" placeholder="Cerca prodotto...">
                 </form>
               </div> --}}
-              <form class="position-relative" action="{{ route('articles.searched') }}" role="search" method="GET">
+              {{-- <form class="position-relative" action="{{ route('articles.searched') }}" role="search" method="GET" id="search-form">
                 <input name="query" type="text" class="input-search" placeholder="Cerca prodotto...">
-                <i class="bi bi-search position-absolute start-0 top-50 "></i>
-              </form>
-              
+                <i class="bi bi-search position-absolute fs-4"></i>
+              </form> --}}
+              <x-searchbar/>
             
                 @guest
                     <li class="nav-item">
@@ -39,10 +39,6 @@
                 @endauth
 
             </ul>
-            {{-- <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-quar" type="submit">Search</button>
-        </form> --}}
         </div>
     </div>
 </nav>
