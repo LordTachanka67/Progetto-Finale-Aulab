@@ -12,7 +12,19 @@
         </button>
         <div class="collapse navbar-collapse my-1 " id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
+              
+              {{-- <div class="search-box">
+                <button type="submit" class="btn-search"><i class="bi bi-search"></i></button>
+                <form action="{{ route('articles.searched') }}" role="search" method="GET">
+                <input name="query" type="text" class="input-search" placeholder="Cerca prodotto...">
+                </form>
+              </div> --}}
+              <form class="position-relative" action="{{ route('articles.searched') }}" role="search" method="GET">
+                <input name="query" type="text" class="input-search" placeholder="Cerca prodotto...">
+                <i class="bi bi-search position-absolute start-0 top-50 "></i>
+              </form>
+              
+            
                 @guest
                     <li class="nav-item">
                         <a class="nav-link buttonLogin" href="{{ route('login') }}">Login</a>

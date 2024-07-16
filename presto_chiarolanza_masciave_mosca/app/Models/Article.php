@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
     use HasFactory;
+
+    use Searchable;
 
     protected $fillable = [
         'title',
@@ -16,6 +19,18 @@ class Article extends Model
         'category_id',
         'user_id',
     ];
+
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'price' => $this->price,
+            'category' => $this->category->name,
+            'user' => $this->user->name,
+        ];
+    }
 
     public function category()
     {

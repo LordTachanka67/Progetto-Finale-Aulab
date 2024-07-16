@@ -123,6 +123,41 @@ a[x-apple-data-detectors] {
                  </tr>
                </table></td>
              </tr>
+             <tr>
+              <td align="left" bgcolor="#017582" style="padding:0;Margin:0;padding-top:20px;padding-right:20px;padding-left:20px;background-color:#017582"><!--[if mso]><table style="width:560px" cellpadding="0" cellspacing="0"><tr><td style="width:270px" valign="top"><![endif]-->
+               <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                 <tr>
+                  <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:270px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr>
+                      <td align="right" style="padding:0;Margin:0"><!--[if mso]><a href="ROUTE" target="_blank" hidden>
+	<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="ROUTE" 
+                style="height:41px; v-text-anchor:middle; width:121px" arcsize="50%" stroke="f"  fillcolor="#02aabd">
+		<w:anchorlock></w:anchorlock>
+		<center style='color:#0ef906; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:15px; font-weight:400; line-height:15px;  mso-text-raise:1px'>Accetta</center>
+	</v:roundrect></a>
+<![endif]--><!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#93c47d;background:#02aabd;border-width:0px 0px 2px 0px;display:inline-block;border-radius:30px;width:auto;mso-hide:all;border-bottom-width:0px"><a href="{{route('make.revisor', compact('user'))}}" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none !important;mso-line-height-rule:exactly;color:#0ef906;font-size:18px;padding:10px 20px 10px 20px;display:inline-block;background:#02aabd;border-radius:30px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #02aabd">Accetta</a></span><!--<![endif]--></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td><td style="width:20px"></td><td style="width:270px" valign="top"><![endif]-->
+               <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                 <tr>
+                  <td align="left" style="padding:0;Margin:0;width:270px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><!--[if mso]><a href="ROUTE" target="_blank" hidden>
+	<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="ROUTE" 
+                style="height:41px; v-text-anchor:middle; width:112px" arcsize="50%" stroke="f"  fillcolor="#02aabd">
+		<w:anchorlock></w:anchorlock>
+		<center style='color:#f92f29; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:15px; font-weight:400; line-height:15px;  mso-text-raise:1px'>Rifiuta</center>
+	</v:roundrect></a>
+<![endif]--><!--[if !mso]><!-- --><span class="msohide es-button-border" style="border-style:solid;border-color:#2CB543;background:#02aabd;border-width:0px 0px 2px 0px;display:inline-block;border-radius:30px;width:auto;mso-hide:all;border-bottom-width:0px"><a href="{{route('reject.revisor', compact('user'))}}" class="es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none !important;mso-line-height-rule:exactly;color:#f92f29;font-size:18px;padding:10px 20px 10px 20px;display:inline-block;background:#02aabd;border-radius:30px;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;letter-spacing:0;mso-padding-alt:0;mso-border-alt:10px solid #02aabd">Rifiuta</a></span><!--<![endif]--></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td></tr></table><![endif]--></td>
+             </tr>
            </table></td>
          </tr>
        </table>

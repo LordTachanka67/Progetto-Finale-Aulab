@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
@@ -46,4 +48,14 @@ class RevisorController extends Controller
         $lastModified->setAccepted(null);
         return redirect()->route('revisor.index')->with('success', 'Hai annullato l\'ultima azione');
     } 
+
+    public function makeRevisor(User $user){
+        Artisan::call('app:make-user-revisor', ['email' => $user->email]);
+        return redirect()->back(); 
+    }
+
+    public function rejectRevisor(User $user){
+        Artisan::call('app:remove-user-revisor', ['email' => $user->email]);
+        return redirect()->back(); 
+    }
 }

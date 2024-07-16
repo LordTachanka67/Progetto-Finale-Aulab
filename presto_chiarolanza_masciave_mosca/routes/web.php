@@ -37,6 +37,8 @@ Route::POST('/lavora-con-noi/invia', [MailController::class, 'revisorApplication
 
 /* REVISORE */
 Route::middleware(['auth','isRevisor'])->group(function () {
+    Route::get('/make/revisor{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+    Route::get('/reject/revisor{user}', [RevisorController::class, 'rejectRevisor'])->name('reject.revisor');
     Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
     Route::get('/revisor/{article}', [RevisorController::class, 'show'])->name('revisor.show');
     
@@ -53,3 +55,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/{article}/edit', [DashboardController::class, 'edit'])->name('dashboard.edit');
     Route::put('/dashboard/{article}/update', [DashboardController::class, 'update'])->name('dashboard.update');
 });
+
+/* RICERCA */
+Route::get('/search', [PublicController::class, 'searchArticles'])->name('articles.searched');
