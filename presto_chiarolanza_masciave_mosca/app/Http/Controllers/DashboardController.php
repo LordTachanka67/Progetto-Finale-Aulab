@@ -29,11 +29,20 @@ class DashboardController extends Controller
 
     function edit(Article $article)
     {
+        /* VERIFICA SE L'UTENTE E' AUTORIZZATO A MODIFICARE L'ARTICOLO */
+        if(Auth::id() != $article->user_id) {
+            return redirect()->route('dashboard.index')->with('danger', 'Non sei autorizzato a modificare questo articolo');
+        }
+
         return view('dashboard.edit', compact('article'));
     }
 
     function update(Request $request, Article $article)
     {
+        /* VERIFICA SE L'UTENTE E' AUTORIZZATO A MODIFICARE L'ARTICOLO */
+        if(Auth::id() != $article->user_id) {
+            return redirect()->route('dashboard.index')->with('danger', 'Non sei autorizzato a modificare questo articolo');
+        }
         /* dd($request->all()); */
         $data = $request->all();
         $article->update(['title' => $data['title'], 'description' => $data['description'], 'price' => $data['price'], 'category_id' => $data['category'], 'user_id' => Auth::id(), 'is_accepted' => null]);
@@ -42,6 +51,10 @@ class DashboardController extends Controller
 
     function destroy(Article $article)
     {
+        /* VERIFICA SE L'UTENTE E' AUTORIZZATO A MODIFICARE L'ARTICOLO */
+        if(Auth::id() != $article->user_id) {
+            return redirect()->route('dashboard.index')->with('danger', 'Non sei autorizzato a modificare questo articolo');
+        }
         $article->delete();
         return redirect()->route('dashboard.index')->with('success', 'Articolo eliminato');
     }
