@@ -3,6 +3,7 @@
     <x-masthead h1="Modifica l'articolo" />
 
     <div class="container">
+        <a class="btn btn-quar mb-3" href="{{ route('dashboard.index') }}"><i class="bi bi-arrow-bar-left"></i> TORNA ALLA DASHBOARD</a>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10">
                 <x-flashmessage />
@@ -20,8 +21,8 @@
                     {{-- DESCRIZIONE --}}
                     <div class="mb-3">
                         <label for="description">Descrizione</label>
-                        <textarea name="description"  id="description" class="form-control"   cols="30" rows="10" placeholder="Descrivi il tuo annuncio...">
-                            {{ $article->description }}
+                        <textarea name="description"  id="description" class="form-control"   cols="30" rows="10" 
+                        placeholder="Descrivi il tuo annuncio...">{{ $article->description }}
                         </textarea>
                     </div>
             

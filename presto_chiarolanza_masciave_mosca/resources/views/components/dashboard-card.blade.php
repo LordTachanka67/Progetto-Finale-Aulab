@@ -10,6 +10,11 @@
       <p class="text-body text-truncate">{{$article->description}}</p>
       <p class="text-title text-quar">Prezzo: €{{ number_format($article->price, 2, ',') }}</p>
       <a href="{{route('dashboard.edit', compact('article'))}}" class="btn btn-success">MODIFICA</a>
+      <form action="{{route('dashboard.destroy', compact('article'))}}" method="post">
+      @csrf
+      @method('delete')
+      <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+      </form>
       
     </div>
     <a href="{{route('dashboard.show', compact('article'))}}" class="card-button btn-quar text-decoration-none text-center">Vai all'articolo</a>

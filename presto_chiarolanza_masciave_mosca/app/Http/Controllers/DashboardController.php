@@ -34,9 +34,15 @@ class DashboardController extends Controller
 
     function update(Request $request, Article $article)
     {
-        dd($request->all());
+        /* dd($request->all()); */
         $data = $request->all();
-        $article->update($data);
-        return redirect()->route('dashboard.index');
+        $article->update(['title' => $data['title'], 'description' => $data['description'], 'price' => $data['price'], 'category_id' => $data['category'], 'user_id' => Auth::id(), 'is_accepted' => null]);
+        return redirect()->route('dashboard.index')->with('success', 'Articolo aggiornato');
+    }
+
+    function destroy(Article $article)
+    {
+        $article->delete();
+        return redirect()->route('dashboard.index')->with('success', 'Articolo eliminato');
     }
 }

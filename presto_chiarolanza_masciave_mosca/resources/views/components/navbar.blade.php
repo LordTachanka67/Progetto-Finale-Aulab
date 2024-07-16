@@ -25,7 +25,7 @@
                 @auth
                     <li class="nav-link buttonUser">
                         <button class="btn btn-quar" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasUser" aria-controls="offcanvasUser=">Ciao {{ auth()->user()->name }}
+                            data-bs-target="#offcanvasUser" aria-controls="offcanvasUser="><span class="d-none d-sm-inline">Ciao {{ auth()->user()->name }}</span>
                             <i class="bi bi-person-circle"></i></button>
                     </li>
                 @endauth

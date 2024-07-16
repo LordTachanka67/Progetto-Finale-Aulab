@@ -13,8 +13,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('dashboard') }}"><i
-                                class="bi bi-plus-square"></i> Dashboard </a>
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('dashboard.index') }}"><i class="bi bi-clipboard-data">
+                        </i> Dashboard </a>
                     </li>
 
                     @if (auth()->user()->is_revisor)

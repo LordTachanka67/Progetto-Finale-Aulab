@@ -3,6 +3,7 @@
     <x-masthead h1='{{ $article->title }}' />
 
     <div class="container-fluid">
+        <a class="btn btn-quar mb-3" href="{{ route('dashboard.index') }}"><i class="bi bi-arrow-bar-left"></i> TORNA INDIETRO</a>
         {{-- VISTA SHOW PER IL PRODOTTO --}}
         <div class="row px-5 justify-content-center">
             <div class="border border-5 shadow p-3 row">
