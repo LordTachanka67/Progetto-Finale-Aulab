@@ -34,18 +34,18 @@
 
             {{-- BOTTONE RIFIUTA E ACCETTA --}}
             <div class="row my-5 justify-content-center">
-                <div class="col-4 text-center">
+                <div class="col-6 col-md-4 text-center">
                     <form action="{{route('article.reject', ['article' => $article])}}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <button type="submit" class="btn btn-danger w-50 py-2">Rifiuta</button>
+                        <button type="submit" class="btn btn-danger py-2 px-3">Rifiuta</button>
                     </form> 
                 </div>
-                <div class="col-4 text-center">
+                <div class="col-6 col-md-4 text-center">
                     <form action="{{route('article.accept', ['article' => $article])}}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <button type="submit" class="btn btn-success w-50 py-2">Accetta</button>
+                        <button type="submit" class="btn btn-success py-2 px-3">Accetta</button>
                     </form>
                 </div>
             </div>

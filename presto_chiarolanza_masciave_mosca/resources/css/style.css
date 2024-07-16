@@ -75,9 +75,25 @@ label {
     z-index: 1;
 }
 
-.custom-margin-top {
-    margin-top: 15rem;
+@media only screen and (max-width: 450px) {
+    .custom-margin-top {
+        margin-top: 4rem;   
 }
+.custom-margin-top-form{
+        margin-top: 7rem; 
+}
+}
+
+@media screen and (min-width: 576px){
+    .custom-margin-top {
+        margin-top: 8rem;   
+}
+.custom-margin-top-form{
+        margin-top: 12rem;
+}
+}
+
+
 
 .show-path>span>a,
 .show-path {

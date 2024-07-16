@@ -5,29 +5,21 @@
                 <path d="M8 7.982C9.664 6.309 13.825 9.236 8 13 2.175 9.236 6.336 6.31 8 7.982" />
                 <path
                     d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zm0 1H7.5v3h-6zM8.5 4V1h3.75l2.25 3zM15 5v10H1V5z" />
-            </svg>Presto.it</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            </svg> <span class="d-none d-sm-inline-block"> Presto.it</span>
+           </a>
+        {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse my-1 " id="navbarSupportedContent">
+        <div class="collapse navbar-collapse my-1 " id="navbarSupportedContent"> --}}
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               
-              {{-- <div class="search-box">
-                <button type="submit" class="btn-search"><i class="bi bi-search"></i></button>
-                <form action="{{ route('articles.searched') }}" role="search" method="GET">
-                <input name="query" type="text" class="input-search" placeholder="Cerca prodotto...">
-                </form>
-              </div> --}}
-              {{-- <form class="position-relative" action="{{ route('articles.searched') }}" role="search" method="GET" id="search-form">
-                <input name="query" type="text" class="input-search" placeholder="Cerca prodotto...">
-                <i class="bi bi-search position-absolute fs-4"></i>
-              </form> --}}
               <x-searchbar/>
             
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link buttonLogin" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link buttonLogin d-none d-sm-block" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link buttonLogin d-block d-sm-none" href="{{ route('login') }}"><i class="bi bi-person fs-2"></i></a>
                     </li>
                 @endguest
                 @auth
@@ -72,7 +64,7 @@
     @endforeach
 </div> --}}
 
-<div class="scrollmenu fixed-top d-flex justify-content-evenly">
+<div class="d-none d-sm-block scrollmenu fixed-top d-flex justify-content-evenly">
   <a class="nav-link nav-sec-btn {{ Route::currentRouteName() === 'articles.index' ? 'active' : '' }}" aria-current="page" href="{{ route('articles.index') }}">Tutti gli articoli</a>
   @foreach ($categories as $category)
     <a class="nav-link nav-sec-btn {{ request()->is('categories/' . $category->id) ? 'active' : '' }}" aria-current="page" href="{{ route('categories.byCategory', ['category' => $category->id]) }}">

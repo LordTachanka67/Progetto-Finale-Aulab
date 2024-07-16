@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container  custom-margin-top">
+    <div class="container custom-margin-top-form">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
 

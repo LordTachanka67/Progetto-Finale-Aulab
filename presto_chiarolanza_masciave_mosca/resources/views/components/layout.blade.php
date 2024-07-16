@@ -21,6 +21,7 @@
     {{$slot}}
     </div>
     <x-footer/>
+    <x-category/>
     <x-rightOffcanvas/>
 </body>
 </html>
