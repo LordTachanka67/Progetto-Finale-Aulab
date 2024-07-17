@@ -127,9 +127,21 @@ label {
 }
 
 .img-preview{
-    width: 180px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+}
+
+.bg-main{
+    background-color: var(--main);
+}
+
+.img-carousel{
+    width: 1000px;
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

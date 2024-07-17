@@ -5,35 +5,7 @@
                 <x-flashmessage />
                 <form wire:submit="store" enctype="multipart/form-data">
                     @csrf
-                    {{--  IMMAGINI --}}
-                    <div class="mb-3">
-                        <label for="imageUpload" class="form-label">Carica una o più immagini</label>
-                        <input id="imageUpload" type="file" wire:model.live="temporary_images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
-                        @error('temporary_images.*')
-                            <p class="text-danger">{{$message}}</p>
-                        @enderror
-                        @error('temporary_images')
-                            <p class="text-danger">{{$message}}</p>
-                        @enderror
-                    </div>
-                    @if (!empty($images))
-                    {{-- @dd($images) --}}
-                        <div class="row d-flex">
-                            <div class="col-12 mt-2">
-                                <p>Anteprima:</p>
-                            </div>
-                                <div class="row">
-                                    @foreach ($images as $image)
-                                    <div class=" mb-3 col-3">
-                                        <div class="img-preview" style="background-image: url({{$image->temporaryUrl()}})">
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                        </div>
-                        
-
-                    @endif
+                   
 
                     {{-- TITOLO --}}
                     <div class="mb-3">
@@ -77,7 +49,38 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-            
+
+                     {{--  IMMAGINI --}}
+                     <div class="mb-3">
+                        <label for="imageUpload" class="form-label">Carica una o più immagini</label>
+                        <input id="imageUpload" type="file" wire:model.live="temporary_images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
+                        @error('temporary_images.*')
+                            <p class="text-danger">{{$message}}</p>
+                        @enderror
+                        @error('temporary_images')
+                            <p class="text-danger">{{$message}}</p>
+                        @enderror
+                    </div>
+                    @if (!empty($images))
+                    {{-- @dd($images) --}}
+                        <div class="row d-flex">
+                            <div class="col-12 mt-2">
+                                <p>Anteprima:</p>
+                                <p>Hai selezionato {{count($images)}} immagini</p>
+                            </div>
+                                <div class="row">
+                                    @foreach ($images as $key => $image)
+                                    <div class="mb-3 col-3">
+                                        <div class="img-preview" style="background-image: url({{$image->temporaryUrl()}})">
+                                            <button class="btn btn-quar bg-main" type="button" wire:click="removeImage({{$key}})"><i class="bi bi-x-lg"></i></button>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                        </div>
+                        
+
+                    @endif
                     <button type="submit" class="btn btn-quar">Inserisci</button>
                 </form>
             </div>

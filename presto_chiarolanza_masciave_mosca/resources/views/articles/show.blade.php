@@ -23,7 +23,7 @@
 
             {{-- CAROUSEL --}}
             <div class="col-12 col-md-7 mb-3">
-                <x-carousel />
+                <x-carousel :article="$article" />
             </div>
 
 
@@ -58,9 +58,9 @@
                 <div class="col-6 col-md-2">
                     <div class="card mb-5">
                         <a class="text-decoration-none" href="{{ route('articles.show', compact('article')) }}">
-                            <img src="https://picsum.photos/300/300" class=" card-img-top" alt="...">
+                            
                             <div class="card-body text-center">
-
+                                <img src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : '/background/default.jpg'}}" class=" card-img-top" alt="{{$article->title}}">
                                 <h5 class="card-title text-truncate text-dark ">{{ $article->title }}</h5>
                                 <p class="card-title text-dark lead">€{{ number_format($article->price, 2, ',') }} </p>
                             </div>

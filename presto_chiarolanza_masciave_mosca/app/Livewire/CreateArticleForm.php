@@ -38,14 +38,24 @@ class CreateArticleForm extends Component
             'category_id' => $this->category_id,
             'user_id' => Auth::id(),
         ]);
+        
+        if(count($this->images) > 0){
+            foreach($this->images as $image){
+                $this->article->images()->create([
+                    'path' => $image->store('images', 'public'),
+                ]);
+            }
+        }
+
         $this->reset();
+
         
         session()->flash('success', 'Articolo creato con successo');
     }
     
     public function updatedTemporaryImages(){
         if($this->validate([
-            'temporary_images.*' => 'image|max:1024',
+            'temporary_images.*' => 'image|max:2048',
             'temporary_images' => 'max:6',
             ])){
               
@@ -57,6 +67,12 @@ class CreateArticleForm extends Component
         public function render()
         {
             return view('livewire.create-article-form');
+        }
+
+        public function removeImage($key){
+            if(in_array($key, array_keys($this->images))){
+                unset($this->images[$key]);
+            }
         }
     }
     
