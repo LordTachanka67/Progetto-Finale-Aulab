@@ -7,7 +7,8 @@
                     @csrf
                     {{--  IMMAGINI --}}
                     <div class="mb-3">
-                        <input type="file" wire:model.live="temporary_images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
+                        <label for="imageUpload" class="form-label">Carica una o più immagini</label>
+                        <input id="imageUpload" type="file" wire:model.live="temporary_images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
                         @error('temporary_images.*')
                             <p class="text-danger">{{$message}}</p>
                         @enderror
@@ -16,18 +17,19 @@
                         @enderror
                     </div>
                     @if (!empty($images))
-                        <div class="row">
-                            <div class="col-12">
+                    {{-- @dd($images) --}}
+                        <div class="row d-flex">
+                            <div class="col-12 mt-2">
                                 <p>Anteprima:</p>
-                                <div>
+                            </div>
+                                <div class="row">
                                     @foreach ($images as $image)
-                                    <div class="d-flex flex-column mb-b col">
+                                    <div class=" mb-3 col-3">
                                         <div class="img-preview" style="background-image: url({{$image->temporaryUrl()}})">
                                         </div>
                                     </div>
                                     @endforeach
                                 </div>
-                            </div>
                         </div>
                         
 

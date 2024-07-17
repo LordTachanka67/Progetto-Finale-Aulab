@@ -27,7 +27,7 @@ class CreateArticleForm extends Component
     public $category_id;
     public $article;
     public $images = [];
-    public $temporary_image;
+    public $temporary_images;
     
     public function store() {
         $this->validate();
@@ -48,6 +48,7 @@ class CreateArticleForm extends Component
             'temporary_images.*' => 'image|max:1024',
             'temporary_images' => 'max:6',
             ])){
+              
                 foreach($this->temporary_images as $image){
                     $this->images[] = $image;
                 }
