@@ -5,7 +5,7 @@
       @foreach ($article->images as $key =>$image)
       <div class="carousel-item @if($loop->first) active @endif">
           
-            <img class="img-fluid" src="{{Storage::url($image->path)}}" alt="{{$article->title}}">
+            <img class="img-fluid" src="{{$image->getUrl(1200,800)}}" alt="{{$article->title}}">
         
       </div>
       @endforeach
@@ -24,3 +24,5 @@
     <img src="/background/default.jpg" class=" card-img-top" alt="Nessuna immagine inserita">
 @endif
   </div>
+
+  {{-- {{Storage::url($image->path)}} --}} 
