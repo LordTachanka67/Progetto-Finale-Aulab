@@ -5,7 +5,34 @@
                 <x-flashmessage />
                 <form wire:submit="store" enctype="multipart/form-data">
                     @csrf
-            
+                    {{--  IMMAGINI --}}
+                    <div class="mb-3">
+                        <input type="file" wire:model.live="temporary_images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
+                        @error('temporary_images.*')
+                            <p class="text-danger">{{$message}}</p>
+                        @enderror
+                        @error('temporary_images')
+                            <p class="text-danger">{{$message}}</p>
+                        @enderror
+                    </div>
+                    @if (!empty($images))
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Anteprima:</p>
+                                <div>
+                                    @foreach ($images as $image)
+                                    <div class="d-flex flex-column mb-b col">
+                                        <div class="img-preview" style="background-image: url({{$image->temporaryUrl()}})">
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    @endif
+
                     {{-- TITOLO --}}
                     <div class="mb-3">
                         <label for="title" class="form-label">Titolo</label>
