@@ -6,7 +6,7 @@
 } */
 
 :root {
-    --main: rgb(241, 250, 238);
+    --main: #f1faee;
     --sec: #013036;
     --quar: #017582;
     --ter: #02aabd;
@@ -119,4 +119,9 @@ label {
 
 .text-quar{
     color: var(--quar);
+}
+
+#logo{
+    width: 5rem;
+    margin: 0;
 }

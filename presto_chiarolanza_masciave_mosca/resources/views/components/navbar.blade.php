@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg fixed-top " id="nav">
     <div class="container-fluid nav-text nav2">
-        <a class="py-2 navbar-brand" href="{{ route('homepage') }}"><svg xmlns="http://www.w3.org/2000/svg" width="25"
+        <a class="py-2 navbar-brand" href="{{ route('homepage') }}">
+          {{-- <img id="logo" src="background/logo.png" alt="Presto.it"> --}}
+          <svg xmlns="http://www.w3.org/2000/svg" width="25"
                 height="25" fill="currentColor" class="bi bi-box2-heart me-2 mb-2" viewBox="0 0 16 16">
                 <path d="M8 7.982C9.664 6.309 13.825 9.236 8 13 2.175 9.236 6.336 6.31 8 7.982" />
                 <path
