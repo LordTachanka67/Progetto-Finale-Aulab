@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Livewire;
 
 use App\Jobs\ResizeImage;
@@ -11,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\File;
 
-class CreateArticleForm extends Component
+class EditArticleForm extends Component
 {
     use WithFileUploads;
     
@@ -30,18 +29,33 @@ class CreateArticleForm extends Component
     public $article;
     public $images = [];
     public $temporary_images;
+
+    public function mount(Article $article){
+        $this->article = $article;
+        $this->title = $article->title;
+        $this->description = $article->description;
+        $this->price = $article->price;
+        $this->category_id = $article->category_id;
+    }
     
-    public function store() {
+    public function update() {
         $this->validate();
-        $this->article = Article::create([
+        $this->article->update([
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
             'category_id' => $this->category_id,
             'user_id' => Auth::id(),
         ]);
+        /* $this->article = Article::create([
+            'title' => $this->title,
+            'description' => $this->description,
+            'price' => $this->price,
+            'category_id' => $this->category_id,
+            'user_id' => Auth::id(),
+        ]); */
         
-        if(count($this->images) > 0){
+        /* if(count($this->images) > 0){
             foreach($this->images as $image){
                 $newFileName = "articles/{$this->article->id}";
                 $newImage = $this->article->images()->create([
@@ -49,12 +63,10 @@ class CreateArticleForm extends Component
                 ]);
                 dispatch(new ResizeImage($newImage->path, 1200, 800));
 
-                /* $this->article->images()->create([
-                    'path' => $image->store('images', 'public'),
-                ]); */
+                
             }
             File::deleteDirectory(storage_path('app/livewire/tmp'));
-        }
+        } */
 
         $this->reset();
 
@@ -84,4 +96,3 @@ class CreateArticleForm extends Component
             return view('livewire.create-article-form');
         }
     }
-    
