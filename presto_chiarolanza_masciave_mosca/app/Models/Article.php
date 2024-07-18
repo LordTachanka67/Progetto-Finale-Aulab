@@ -20,6 +20,7 @@ class Article extends Model
         'category_id',
         'user_id',
         'is_accepted',
+        'is_favourite'
     ];
 
     public function toSearchableArray()

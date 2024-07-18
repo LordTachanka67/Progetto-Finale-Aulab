@@ -27,4 +27,8 @@ class PublicController extends Controller
     public function team(){
         return view('team');
     }
+
+    public function instagram(){
+        return view('instagram');
+    }
 }

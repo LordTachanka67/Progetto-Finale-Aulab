@@ -24,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(ArticleController::class)->prefix('articles')->group(function () {
         Route::get('/create', 'create')->name('articles.create');
         Route::post('/store', 'store')->name('articles.store');
+        Route::patch('/preferiti', 'favourites')->name('articles.favourites');
     });   
 });
 
@@ -68,3 +69,6 @@ Route::get('/search', [PublicController::class, 'searchArticles'])->name('articl
 
 /* CAMBIO LINGUA */
 Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
+
+// SOCIAL
+Route::get('/instagram', [PublicController::class, 'instagram'])->name('instagram');

@@ -76,4 +76,11 @@ class ArticleController extends Controller
     {
         //
     }
+
+    public function favourites()
+    {
+            // CREARE LA COLONNA IS FAVOURITE BOOLEANA DEFAULT FALSE
+            // CREARE UN METODO PER AGGIUNGERE E RIMUOVERE IL FAVOURITE DALLA COLONNA
+            // INSERIRE LA ACTION NEL FORM
+    }
 }

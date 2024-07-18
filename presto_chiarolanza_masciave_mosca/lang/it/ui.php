@@ -100,4 +100,5 @@ return [
       'nostroTeam' => 'Il Nostro Team',
       'titolo' => 'Titolo',
       'percheRevisore'   => 'Perche vuoi candidarti come revisore?',
+      'aggiungiPreferiti' => 'Aggiungi ai preferiti',
 ];

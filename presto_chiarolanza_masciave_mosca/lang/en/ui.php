@@ -98,4 +98,5 @@ return [
   'nostroTeam' => 'Our team',
   'titolo' => 'Title',
   'percheRevisore'   => 'Why do you want to be a reviewer?',
+  'aggiungiPreferiti' => 'Add to favorites',
 ];

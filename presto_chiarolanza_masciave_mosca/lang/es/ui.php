@@ -97,4 +97,5 @@ return [
   'nostroTeam' => 'Nuestro equipo',
   'titolo' => 'Título',
   'percheRevisore'   => '¿Por qué se revisará este anuncio?',
+  'aggiungiPreferiti' => 'Agregar a favoritos',
 ];

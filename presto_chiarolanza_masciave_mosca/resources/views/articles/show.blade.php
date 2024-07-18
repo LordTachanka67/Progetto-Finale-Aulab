@@ -33,6 +33,15 @@
                     {{-- CATEGORIA E NOME UTENTE VENDITORE --}}
                     <h6 class="mb-5"><span class="badge me-3"><a
                                 href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ __('ui.' . $article->category->name) }}</a></span>{{__('ui.vendutoDa')}}: {{ $article->user->name }}</h6>
+                        @auth
+                        {{-- PREFERITI --}}
+                        <form action="" method="POST">
+                         @csrf
+                         @method('PATCH')
+                            <div class="d-flex align-items-center text-center"><button class="border-0"><i class="bi bi-heart fs-1 text-quar" id="preferiti"></i></button><span class="ms-1 mb-1 text-quar">{{__('ui.aggiungiPreferiti')}}</span></div>
+                        </form>
+                            
+                        @endauth
 
                     {{-- PREZZO E BOTTONE AGGIUNGI AL CARRELLO --}}
                     <div class="d-flex flex-column align-items-center">
@@ -41,6 +50,7 @@
                         <button class="btn btn-quar px-5 py-2 fs-3">{{__('ui.aggiungiAl')}} <i class="bi bi-cart3"></i></button>
                     </div>
                 </div>
+                
                 {{-- DESCRIZIONE --}}
                 <div class="col-12 mt-3 bg-quar">
                     <h5 class="mt-4 ms-3">{{__('ui.descrizione')}}: </h5>
