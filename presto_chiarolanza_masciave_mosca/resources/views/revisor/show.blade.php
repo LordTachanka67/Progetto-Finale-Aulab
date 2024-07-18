@@ -1,7 +1,7 @@
 <x-layout>
 
     <x-masthead h1='{{ $article->title }}' />
-
+      
     <div class="container-fluid">
         <a class="btn btn-quar mb-3" href="{{ route('revisor.index') }}"><i class="bi bi-arrow-bar-left"></i> TORNA INDIETRO</a>
         {{-- VISTA SHOW PER IL PRODOTTO --}}
@@ -9,7 +9,7 @@
             <div class="border border-5 shadow p-3 row">
                 {{-- CAROUSEL --}}
                 <div class="col-12 col-md-7 mb-3">
-                    <x-carousel />
+                    <x-carousel :article="$article" />
                 </div>
                 <div class="col-12 col-md-4 p-3 text-center">
                     {{-- TITOLO --}}

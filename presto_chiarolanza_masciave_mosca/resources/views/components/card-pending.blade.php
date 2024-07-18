@@ -20,7 +20,8 @@
         <span class="badge position-absolute">{{$article->category->name}}</span>
     </div>    
     @endif
-    <img src="https://picsum.photos/300/300" class="card-img-top mb-3 position-relative" alt="{{$article->title}}">
+    {{-- @dd($article->images); --}}
+    <img src="{{$article->images->isNotEmpty() ?  Storage::url($article->images->first()->path): '/background/default.jpg'}}" class=" card-img-top" alt="{{$article->title}}">
     <div class="card-details text-center">
       <p class="text-title text-truncate text-quar">{{$article->title}}</p>
       <p class="text-body text-truncate">{{$article->description}}</p>

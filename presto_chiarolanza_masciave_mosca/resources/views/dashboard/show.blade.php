@@ -1,5 +1,4 @@
 <x-layout>
-
     <x-masthead h1='{{ $article->title }}' />
 
     <div class="container-fluid">
@@ -9,7 +8,7 @@
             <div class="border border-5 shadow p-3 row">
                 {{-- CAROUSEL --}}
                 <div class="col-12 col-md-7 mb-3">
-                    <x-carousel />
+                    <x-carousel :article="$article" />
                 </div>
                 <div class="col-12 col-md-4 p-3 text-center">
                     {{-- TITOLO --}}
