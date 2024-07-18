@@ -39,4 +39,5 @@ return [
   "home" => "Inicio",
   "lavoraConNoi" => "Trabaja con nosotros",
   "about" => "Acerca de",
+  'language' => 'ES',
 ];

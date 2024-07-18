@@ -40,4 +40,5 @@ return [
   "home" => "Home",
   "lavoraConNoi" => "Work with us",
   "about" => "About",
+  'language' => 'EN',
 ];

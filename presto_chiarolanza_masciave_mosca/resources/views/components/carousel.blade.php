@@ -21,7 +21,9 @@
   </button>
   @endif
   @else
-  <img src="/background/default.jpg" class="card-img-top" alt="Nessuna immagine inserita">
+  
+  <img src="/background/default.jpg" class="card-img-top " alt="Nessuna immagine inserita">
+
   @endif
 </div>
 

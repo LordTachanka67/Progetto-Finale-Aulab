@@ -34,6 +34,11 @@
                     @endif
 
                 </ul>
+
+                {{-- <span class="position-absolute bottom-0 start-1 mb-2" id="UsedLanguage">{{__('ui.language')}} <x-_locale lang="{{__('ui.language')}}"/></span> --}}
+                <span class="position-absolute bottom-0 start-1 mb-3 text-quar" id="UsedLanguage"><img class="me-2" src="{{asset('vendor/blade-flags/language-' . __('ui.language') . '.svg')}}" width="32" height="32" alt="flag">{{__('ui.language')}}</span>
+                
+
                 <form action="{{ route('logout') }}" method="POST">
                     <button class="nav-link buttonOffcanvas m-3 fs-5 position-absolute bottom-0 end-0"><i
                             class="bi bi-box-arrow-right"></i> {{__('ui.logout')}}</button>
