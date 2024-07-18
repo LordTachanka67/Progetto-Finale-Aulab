@@ -59,3 +59,6 @@ Route::middleware(['auth'])->group(function () {
 
 /* RICERCA */
 Route::get('/search', [PublicController::class, 'searchArticles'])->name('articles.searched');
+
+/* CAMBIO LINGUA */
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');

@@ -9,12 +9,12 @@
                 <ul class="list-unstyled">
                     <li class="nav-item">
                         <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('articles.create') }}"><i
-                                class="bi bi-plus-square"></i> Inserisci annuncio </a>
+                                class="bi bi-plus-square"></i> {{__('ui.inserisciAnnuncio')}} </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('dashboard.index') }}"><i class="bi bi-clipboard-data">
-                        </i> Dashboard </a>
+                        </i> {{__('ui.dashboard')}} </a>
                     </li>
 
                     @if (auth()->user()->is_revisor)
@@ -22,21 +22,21 @@
                       <hr class="mt-5">
                       <li class="nav-item">
                           <a class="nav-link buttonOffcanvas ms-3 fs-5" href=" {{ route('revisor.index') }} "><i
-                                  class="bi bi-suitcase-lg"></i> Articoli da revisionare<span class="ms-2 top-0 start-100 translate-middle rounded-pill bg-ter px-3 py-1 text-center">{{$revisor_pending_number}}</span></a>
+                                  class="bi bi-suitcase-lg"></i> {{__('ui.articoliDaRevisionare')}}<span class="ms-2 top-0 start-100 translate-middle rounded-pill bg-ter px-3 py-1 text-center">{{$revisor_pending_number}}</span></a>
                                     
                       </li>
                     </div>
                     @else
                         <li class="nav-item">
                             <a class="nav-link buttonOffcanvas ms-3 mt-5 fs-5" href=" {{ route('revisorForm') }} "><i
-                                    class="bi bi-suitcase-lg"></i> Lavora con noi </a>
+                                    class="bi bi-suitcase-lg"></i> {{__('ui.lavoraConNoi')}} </a>
                         </li>
                     @endif
 
                 </ul>
                 <form action="{{ route('logout') }}" method="POST">
                     <button class="nav-link buttonOffcanvas m-3 fs-5 position-absolute bottom-0 end-0"><i
-                            class="bi bi-box-arrow-right"></i> Logout</button>
+                            class="bi bi-box-arrow-right"></i> {{__('ui.logout')}}</button>
                     @csrf
                 </form>
             @endauth

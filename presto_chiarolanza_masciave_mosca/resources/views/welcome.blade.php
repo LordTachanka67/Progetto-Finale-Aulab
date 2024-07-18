@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row gap-1  justify-content-center justify-content-around">
             <div class="col-12 text-center mb-3">
-                <h2 class="display-5">Articoli recenti</h2>
+                <h2 class="display-5">{{ __('ui.articoliRecenti')}}</h2>
             </div>
             @if ($articles->isEmpty())
                 <p>Non ci sono articoli</p>

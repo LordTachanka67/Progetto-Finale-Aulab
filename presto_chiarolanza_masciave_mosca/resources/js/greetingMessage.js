@@ -5,11 +5,11 @@ function updateGreeting() {
     let greetingMessage;
     
     if (currentHour >= 5 && currentHour < 12) {
-        greetingMessage = 'Buongiorno ';
+        greetingMessage = 'Buongiorno';
     } else if (currentHour >= 12 && currentHour < 18) {
         greetingMessage = 'Buon pomeriggio ';
     } else {
-        greetingMessage = 'Buona sera ';
+        greetingMessage = 'Buonasera ';
     }
     
     greetingElement.textContent = greetingMessage;

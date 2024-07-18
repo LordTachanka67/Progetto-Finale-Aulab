@@ -9,7 +9,7 @@
                   <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       @foreach ($categories as $category)
-                      <a class="btn btn-quar m-1 category-btn" aria-current="page" href="{{route('categories.byCategory', compact('category'))}}">{{$category->name}}</a>
+                      <a class="btn btn-quar m-1 category-btn" aria-current="page" href="{{route('categories.byCategory', compact('category'))}}">{{__("ui.$category->name")}}</a>
                       @endforeach
                     </div>
                   </div>
