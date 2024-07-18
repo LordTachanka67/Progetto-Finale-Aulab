@@ -7,7 +7,7 @@
         <div class="show-path mb-3">
             <span><a href="{{ route('homepage') }}">{{__('ui.home')}}</a> /</span>
             <span><a
-                    href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ $article->category->name }}</a>
+                    href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ __('ui.' . $article->category->name) }}</a>
                 /</span>
             <span>{{ $article->title }}</span>
         </div>
@@ -32,7 +32,7 @@
                     <h2 class="display-3 article-text">{{ $article->title }}</h2>
                     {{-- CATEGORIA E NOME UTENTE VENDITORE --}}
                     <h6 class="mb-5"><span class="badge me-3"><a
-                                href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ $article->category->name }}</a></span>{{__('ui.vendutoDa')}}: {{ $article->user->name }}</h6>
+                                href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ __('ui.' . $article->category->name) }}</a></span>{{__('ui.vendutoDa')}}: {{ $article->user->name }}</h6>
 
                     {{-- PREZZO E BOTTONE AGGIUNGI AL CARRELLO --}}
                     <div class="d-flex flex-column align-items-center">

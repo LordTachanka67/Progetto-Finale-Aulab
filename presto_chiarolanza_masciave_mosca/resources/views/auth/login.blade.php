@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
 
-                <h1 class="text-center mb-3">Accedi</h1>
+                <h1 class="text-center mb-3">{{__('ui.accedi')}}</h1>
 
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -28,7 +28,7 @@
                         <label for="password">{{__('ui.password')}}</label>
                     </div>
                     <button class="btn btn-quar" type="submit">{{__('ui.accedi')}}</button>
-                    <a class="btn btn-quar" href="{{ route('register') }}">{{__('ui.nonSeiregistrato')}}</a>
+                    <a class="btn btn-quar" href="{{ route('register') }}">{{__('ui.nonSeiRegistrato')}}</a>
                 </form>
             </div>
         </div>

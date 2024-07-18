@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-masthead h1={{__('ui.risultatiRicerca')}} />
+    <x-masthead h1="{{__('ui.risultatiRicerca')}}" />
     <div class="container">
         <div class="row gap-1  justify-content-center justify-content-evenly">
             @if ($articles->isEmpty())

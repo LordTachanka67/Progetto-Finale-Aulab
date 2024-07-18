@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-masthead h1="Modifica l'articolo" />
+    <x-masthead h1="{{__('ui.modificaArticolo')}}" />
 
     {{-- <livewire:edit-article-form :article="$article"
      /> --}}
@@ -42,7 +42,7 @@
                         <select  class="form-select" name="category" id="category">
                             <option selected disabled>{{__('ui.selezionaCategoria')}}</option>
                             @foreach ($categories as $category)
-                                <option @selected($article->category_id == $category->id)  value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option @selected($article->category_id == $category->id)  value="{{ $category->id }}">{{ __('ui.' . $category->name) }}</option>
                             @endforeach
                         </select>
                     </div>

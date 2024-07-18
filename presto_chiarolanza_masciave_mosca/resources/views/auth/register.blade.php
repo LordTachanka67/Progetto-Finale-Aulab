@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
 
-                <h1 class="text-center mb-3">Crea il tuo account</h1>
+                <h1 class="text-center mb-3">{{__('ui.registrati')}}</h1>
 
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -48,7 +48,7 @@
 
                     {{-- BOTTONI --}}
                     <div class="d-flex ">
-                        <button class="btn btn-quar me-2" type="submit">{{__('ui.regustrati')}}</button>
+                        <button class="btn btn-quar me-2" type="submit">{{__('ui.registrati')}}</button>
                         <button class="btn btn-quar me-2" type="reset">{{__('ui.cancella')}}</button>
                     </div>
                 </form>

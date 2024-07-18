@@ -34,7 +34,7 @@
                         <select wire:model.live="category_id" class="form-select" @error('description') is-invalid @enderror aria-label="Default select example" id="category">
                             <option selected disabled>{{__('ui.selezionaCategoria')}}</option>
                             @foreach ($categories as $category)
-                                <option @checked($article->category_id == $category->id)  value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option @checked($article->category_id == $category->id)  value="{{ $category->id }}">{{ __('ui.' . $category->name) }}</option>
                             @endforeach
                         </select>
                         @error('category_id')

@@ -1,5 +1,5 @@
 <x-layout>
-    <x-masthead h1='Dashboard' />
+    <x-masthead h1="{{__('ui.dashboard')}}" />
    {{--  <div class="container">
         <div class="row ">
         <div class="col-12 ">
