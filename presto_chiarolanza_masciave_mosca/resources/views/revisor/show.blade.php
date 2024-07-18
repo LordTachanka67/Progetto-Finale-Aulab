@@ -9,8 +9,8 @@
             <div class="border border-5 shadow p-3 row">
                 {{-- CAROUSEL --}}
                 <div class="col-12 col-md-7 mb-3">
-                    <x-carousel :article="$article" />
-                </div>
+                    <x-carousel :article="$article"/>
+                
                 <div class="col-12 col-md-4 p-3 text-center">
                     {{-- TITOLO --}}
                     <h2 class="display-3 article-text">{{ $article->title }}</h2>
@@ -30,7 +30,7 @@
                     <h5 class="mt-4 ms-3">Descrizione: </h5>
                     <p class="ms-5 mt-2 mb-5">{{ $article->description }}</p>
                 </div>
-
+                </div>
             </div>
 
             {{-- BOTTONE RIFIUTA E ACCETTA --}}

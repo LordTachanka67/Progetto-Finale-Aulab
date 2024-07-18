@@ -54,10 +54,10 @@
     @endforeach
 </div> --}}
 
-<div class="d-none d-sm-block scrollmenu fixed-top d-flex justify-content-evenly">
-  <a class="nav-link nav-sec-btn {{ Route::currentRouteName() === 'articles.index' ? 'active' : '' }}" aria-current="page" href="{{ route('articles.index') }}">Tutti gli articoli</a>
+<div class="d-none d-sm-block scrollmenu fixed-top d-flex text-center justify-content-evenly">
+  <a class="nav-link nav-sec-btn col {{ Route::currentRouteName() === 'articles.index' ? 'active' : '' }}" aria-current="page" href="{{ route('articles.index') }}">Tutti gli articoli</a>
   @foreach ($categories as $category)
-    <a class="nav-link nav-sec-btn {{ request()->is('categories/' . $category->id) ? 'active' : '' }}" aria-current="page" href="{{ route('categories.byCategory', ['category' => $category->id]) }}">
+    <a class="nav-link nav-sec-btn col {{ request()->is('categories/' . $category->id) ? 'active' : '' }}" aria-current="page" href="{{ route('categories.byCategory', ['category' => $category->id]) }}">
       {{ $category->name }}
     </a>
   @endforeach

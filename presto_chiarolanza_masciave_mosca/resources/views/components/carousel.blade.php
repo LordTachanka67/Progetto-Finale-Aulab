@@ -1,28 +1,28 @@
 @if ($article->images->count())
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+  <div class="carousel-inner">
+    
+    @foreach ($article->images as $key =>$image)
+    <div class="carousel-item @if($loop->first) active @endif">
       
-      @foreach ($article->images as $key =>$image)
-      <div class="carousel-item @if($loop->first) active @endif">
-          
-            <img class="img-fluid" src="{{$image->getUrl(1200,800)}}" alt="{{$article->title}}">
-        
-      </div>
-      @endforeach
+      <img class="img-fluid" src="{{$image->getUrl(1200,800)}}" alt="{{$article->title}}">
+      
     </div>
-    @if ($article->images->count() > 1)
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-    @endif
-    @else
-    <img src="/background/default.jpg" class=" card-img-top" alt="Nessuna immagine inserita">
-@endif
+    @endforeach
   </div>
+  @if ($article->images->count() > 1)
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  @endif
+  @else
+  <img src="/background/default.jpg" class="card-img-top" alt="Nessuna immagine inserita">
+  @endif
+</div>
 
-  {{-- {{Storage::url($image->path)}} --}} 
+{{-- {{Storage::url($image->path)}} --}} 
