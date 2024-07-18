@@ -99,5 +99,5 @@ return [
       'inviaCandidatura' => 'Invia candidatura',
       'nostroTeam' => 'Il Nostro Team',
       'titolo' => 'Titolo',
-      'Perché vuoi candidarti come revisore?'   => 'Perche vuoi candidarti come revisore?',
+      'percheRevisore'   => 'Perche vuoi candidarti come revisore?',
 ];
