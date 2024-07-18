@@ -31,7 +31,7 @@ class DashboardController extends Controller
     {
         /* VERIFICA SE L'UTENTE E' AUTORIZZATO A MODIFICARE L'ARTICOLO */
         if(Auth::id() != $article->user_id) {
-            return redirect()->route('dashboard.index')->with('danger', 'Non sei autorizzato a modificare questo articolo');
+            return redirect()->route('dashboard.index')->with('danger', __('ui.autorizzatoModifica'));
         }
 
         return view('dashboard.edit', compact('article'));
@@ -41,21 +41,33 @@ class DashboardController extends Controller
     {
         /* VERIFICA SE L'UTENTE E' AUTORIZZATO A MODIFICARE L'ARTICOLO */
         if(Auth::id() != $article->user_id) {
-            return redirect()->route('dashboard.index')->with('danger', 'Non sei autorizzato a modificare questo articolo');
+            return redirect()->route('dashboard.index')->with('danger', __('ui.autorizzatoModifica'));
         }
         /* dd($request->all()); */
         $data = $request->all();
         $article->update(['title' => $data['title'], 'description' => $data['description'], 'price' => $data['price'], 'category_id' => $data['category'], 'user_id' => Auth::id(), 'is_accepted' => null]);
-        return redirect()->route('dashboard.index')->with('success', 'Articolo aggiornato');
+        return redirect()->route('dashboard.index')->with('success', __('ui.articoloAggiornato'));
     }
 
     function destroy(Article $article)
     {
         /* VERIFICA SE L'UTENTE E' AUTORIZZATO A MODIFICARE L'ARTICOLO */
         if(Auth::id() != $article->user_id) {
-            return redirect()->route('dashboard.index')->with('danger', 'Non sei autorizzato a modificare questo articolo');
+            return redirect()->route('dashboard.index')->with('danger', __('ui.autorizzatoModifica'));
         }
         $article->delete();
-        return redirect()->route('dashboard.index')->with('success', 'Articolo eliminato');
+        return redirect()->route('dashboard.index')->with('success', __('ui.articoloEliminato'));
+    }
+
+    function favorites(){
+        return view('dashboard.preferiti');
+    }
+
+    function cart(){
+        return view('dashboard.carrello');
+    }
+
+    function feedbacks(){
+        return view('dashboard.feedbacks');
     }
 }

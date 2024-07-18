@@ -8,13 +8,13 @@
                     @csrf
                     @method('POST')
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <label for="exampleInputEmail1" class="form-label">{{__('ui.email')}}</label>
                       <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{Auth::user()->email}}" disabled>
                     </div>
                     <div class="mb-3">
                     <textarea class=" form-control" cols="30" rows="5" name="body" placeholder="Perché vuoi candidarti come revisore?"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-quar">Invia candidatura</button>
+                    <button type="submit" class="btn btn-quar">{{__('ui.inviaCandidatura')}}</button>
                   </form>
 
             </div>

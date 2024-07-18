@@ -4,7 +4,7 @@
     <div class="card-info">
         <img src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : '/background/default.jpg'}}" class=" card-img-top" alt="{{$article->title}}">
         <div class="card-title text-truncate">{{$article->title}}</div>
-        <div>Prezzo: €{{ number_format($article->price, 2, ',') }}</div>
+        <div>{{__('ui.prezzo')}}: €{{ number_format($article->price, 2, ',') }}</div>
     </div>
     <ul class="card-social p-0">
         <li class="card-social__item">

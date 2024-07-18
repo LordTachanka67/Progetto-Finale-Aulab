@@ -20,7 +20,7 @@
         <x-flashmessage />
         {{-- ARTICOLI ACCETTATI --}}
         <div class="row justify-content-center justify-content-evenly">
-            <h2>Articoli accettati</h2>
+            <h2>{{__('ui.articoliAccettati')}}</h2>
             @if ($acceptedArticles->isNotEmpty())
                 @foreach ($acceptedArticles as $article)
                     <div class="col-12 col-md-5 col-lg-3">
@@ -29,14 +29,14 @@
                     </div>
                 @endforeach
             @else
-                Nessun articolo accetatto
+            {{__('ui.nessunArticoloAccettato')}}
             @endif
         </div>
         <hr>
 
         {{-- ARTICOLI RIFIUTATI --}}
         <div class="row   justify-content-center justify-content-evenly">
-            <h2>Articoli rifiutati</h2>
+            <h2>{{__('ui.articoliRifiutati')}}</h2>
             @if ($rejectedArticles->isNotEmpty())
                 @foreach ($rejectedArticles as $article)
                     <div class="col-12 col-md-5 col-lg-3 ">
@@ -45,14 +45,14 @@
                     </div>
                 @endforeach
             @else
-                Nessun articolo rifiutato
+            {{__('ui.nessunArticoloRifiutato')}}
             @endif
         </div>
         <hr>
 
         {{-- ARTICOLI IN FASE DI ELABORAZIONE --}}
         <div class="row   justify-content-center justify-content-evenly">
-            <h2>Articoli in fase di elaborazione</h2>
+            <h2>{{__('ui.articoliInFaseDiElaborazione')}}</h2>
             @if ($pendingArticles->isNotEmpty())
                 @foreach ($pendingArticles as $article)
                     <div class="col-12 col-md-5 col-lg-3 ">
@@ -61,7 +61,7 @@
                     </div>
                 @endforeach
             @else
-                Nessun articolo in fase di elaborazione
+            {{__('ui.nessunArticoloInFaseDiElaborazione')}}
             @endif
         </div>
     </div>

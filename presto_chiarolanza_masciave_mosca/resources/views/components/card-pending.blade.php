@@ -25,8 +25,8 @@
     <div class="card-details text-center">
       <p class="text-title text-truncate text-quar">{{$article->title}}</p>
       <p class="text-body text-truncate">{{$article->description}}</p>
-      <p class="text-title text-quar">Prezzo: €{{ number_format($article->price, 2, ',') }}</p>
+      <p class="text-title text-quar">{{__('ui.prezzo')}}: €{{ number_format($article->price, 2, ',') }}</p>
       
     </div>
-    <a href="{{route('revisor.show', compact('article'))}}" class="card-button btn-quar text-decoration-none text-center">Vai all'articolo</a>
+    <a href="{{route('revisor.show', compact('article'))}}" class="card-button btn-quar text-decoration-none text-center">{{__('ui.vaiArticolo')}}</a>
   </div>

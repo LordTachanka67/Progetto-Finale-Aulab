@@ -16,6 +16,20 @@
                         <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('dashboard.index') }}"><i class="bi bi-clipboard-data">
                         </i> {{__('ui.dashboard')}} </a>
                     </li>
+                    {{-- Preferiti --}}
+                    <li class="nav-item">
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5 d-none" href="{{ route('dashboard.favorites') }}"><i class="bi bi-hearts"></i> {{__('ui.preferiti')}} </a>
+                    </li>
+                    {{-- Carrello --}}
+                    <li class="nav-item">
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5 d-none" href="{{ route('dashboard.cart') }}"><i class="bi bi-cart3"></i>
+                        </i> {{__('ui.carrello')}} </a>
+                    </li>
+                    {{-- recensioni --}}
+                    <li class="nav-item">
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5 d-none" href="{{ route('dashboard.feedbacks') }}"><i class="bi bi-star-half"></i>
+                        </i> {{__('ui.recensioni')}} </a>
+                    </li>
 
                     @if (auth()->user()->is_revisor)
                     <div>

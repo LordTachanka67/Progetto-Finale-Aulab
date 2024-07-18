@@ -35,6 +35,9 @@ Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('art
 Route::get('/lavora-con-noi', [MailController::class, 'revisorForm'])->name('revisorForm')->middleware('auth');
 Route::POST('/lavora-con-noi/invia', [MailController::class, 'revisorApplication'])->name('revisorApplication')->middleware('auth');
 
+// TEAM
+Route::get('/team', [PublicController::class, 'team'])->name('team');
+
 /* REVISORE */
 Route::middleware(['auth','isRevisor'])->group(function () {
     Route::get('/make/revisor{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
@@ -55,6 +58,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/{article}/edit', [DashboardController::class, 'edit'])->name('dashboard.edit');
     Route::put('/dashboard/{article}/update', [DashboardController::class, 'update'])->name('dashboard.update');
     Route::delete('/dashboard/{article}/destroy', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
+    Route::get('/dashboard/preferiti', [DashboardController::class, 'favorites'])->name('dashboard.favorites');
+    Route::get('/dashboard/recensioni', [DashboardController::class, 'feedbacks'])->name('dashboard.feedbacks');
+    Route::get('/dashboard/carrello', [DashboardController::class, 'cart'])->name('dashboard.cart');
 });
 
 /* RICERCA */

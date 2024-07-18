@@ -2,13 +2,14 @@
 
 namespace App\Livewire;
 
-use App\Jobs\ResizeImage;
 use session;
 use App\Models\Article;
 use Livewire\Component;
+use App\Jobs\ResizeImage;
+use App\Jobs\PreviewImage;
+use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\File;
 
 class CreateArticleForm extends Component
@@ -29,8 +30,21 @@ class CreateArticleForm extends Component
     public $category_id;
     public $article;
     public $images = [];
+    #[Validate('image', message: "Il file non è valido")]
+    #[Validate('max:2048', message: 'Il file deve avere un massimo di 2MB')]
+    #[Validate('dimensions:min_width=800,min_height=600', message: 'L\'immagine deve avere almeno 800x600 pixel')]
     public $temporary_images;
     
+
+    public function messages(){
+        return [
+            'temporary_images.*.dimensions' =>'L\'immagine deve avere almeno 800x600 pixel',
+            'temporary_images.*.max' => 'Il file deve avere un massimo di 2MB',
+            'temporary_images.*.image' => 'Il file non è valido',
+            'temporary_images.max' => 'Puoi caricare al massimo 6 immagini',
+        ];
+    }
+
     public function store() {
         $this->validate();
         $this->article = Article::create([
@@ -47,8 +61,9 @@ class CreateArticleForm extends Component
                 $newImage = $this->article->images()->create([
                     'path' => $image->store($newFileName, 'public'),
                 ]);
-                dispatch(new ResizeImage($newImage->path, 1200, 800));
-
+                dispatch(new ResizeImage($newImage->path, 800, 600));
+                // dispatch(new CarouselImage($newImage->path, 1200, 800));
+                dispatch(new PreviewImage($newImage->path, 400, 400));
                 /* $this->article->images()->create([
                     'path' => $image->store('images', 'public'),
                 ]); */
@@ -64,7 +79,7 @@ class CreateArticleForm extends Component
     
     public function updatedTemporaryImages(){
         if($this->validate([
-            'temporary_images.*' => 'image|max:2048',
+            'temporary_images.*' => 'image|max:2048|dimensions:min_width=800,min_height=600',
             'temporary_images' => 'max:6',
             ])){
               

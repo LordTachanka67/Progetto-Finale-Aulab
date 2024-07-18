@@ -41,4 +41,7 @@ return [
   "lavoraConNoi" => "Work with us",
   "about" => "About",
   'language' => 'EN',
+  'preferiti' => 'Favorites',
+  'recensioni' => 'Reviews',
+  'carrello' => 'Cart',
 ];

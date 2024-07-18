@@ -32,12 +32,12 @@ class RevisorController extends Controller
         $last_article_pending = Article::where('is_accepted', null)->orderBy('created_at', 'asc')->take(1)->get();
         /* dd($last_article_pending); */
         /* return redirect()->route('revisor.show' , ['article' => $last_article_pending]); */
-        return redirect()->route('revisor.index')->with('cancel', 'Annulla l\'ultima azione');
+        return redirect()->route('revisor.index')->with('cancel', __('ui.annullaAzione'));
     }
     
     public function reject(Article $article){
         $article->setAccepted(false);
-        return redirect()->route('revisor.index')->with('cancel', 'Annulla l\'ultima azione');
+        return redirect()->route('revisor.index')->with('cancel', __('ui.annullaAzione'));
     }   
 
     public function cancel(){
@@ -46,7 +46,7 @@ class RevisorController extends Controller
         $lastModified = Article::where('updated_at', '>=', $interval)->orderBy('updated_at', 'desc')
         ->first();
         $lastModified->setAccepted(null);
-        return redirect()->route('revisor.index')->with('success', 'Hai annullato l\'ultima azione');
+        return redirect()->route('revisor.index')->with('success', __('ui.azioneAnnullata'));
     } 
 
     public function makeRevisor(User $user){

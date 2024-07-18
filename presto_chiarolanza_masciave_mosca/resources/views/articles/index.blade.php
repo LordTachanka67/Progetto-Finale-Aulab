@@ -1,10 +1,10 @@
 <x-layout>
 
-    <x-masthead h1='Tutti gli articoli' />
+    <x-masthead h1={{__('ui.tuttiArticoli')}} />
     <div class="container">
         <div class="row gap-1  justify-content-center justify-content-evenly">
             @if ($articles->isEmpty())
-                <p>Non ci sono articoli</p>
+                <p>{{__('ui.nonCiSonoArticoli')}}</p>
             @else
             @foreach ($articles as $article)
                 <div class="col-12 col-md-5 col-lg-3">

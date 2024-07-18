@@ -4,7 +4,7 @@
         <form action="{{route('article.cancel')}}" method="POST">
             @csrf
             @method('PATCH')
-            <button type="submit" class="btn w-50 py-2">Annulla l'ultima azione</button>
+            <button type="submit" class="btn w-50 py-2">{{__('ui.annullaAzione')}}</button>
         </form> 
     </div>
 @endif

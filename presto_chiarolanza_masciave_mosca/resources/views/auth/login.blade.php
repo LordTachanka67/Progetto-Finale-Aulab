@@ -20,15 +20,15 @@
                     <div class="form-floating mb-3">
                         <input type="email" name="email" class="form-control" id="email"
                             placeholder="name@example.com">
-                        <label for="email">Email</label>
+                        <label for="email">{{__('ui.email')}}</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="password" name="password" class="form-control" id="password"
                             placeholder="Password">
-                        <label for="password">Password</label>
+                        <label for="password">{{__('ui.password')}}</label>
                     </div>
-                    <button class="btn btn-quar" type="submit">Accedi</button>
-                    <a class="btn btn-quar" href="{{ route('register') }}">Non sei registrato?</a>
+                    <button class="btn btn-quar" type="submit">{{__('ui.accedi')}}</button>
+                    <a class="btn btn-quar" href="{{ route('register') }}">{{__('ui.nonSeiregistrato')}}</a>
                 </form>
             </div>
         </div>

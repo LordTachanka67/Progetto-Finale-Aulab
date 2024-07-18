@@ -145,3 +145,8 @@ label {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.disabled-link {
+    pointer-events: none;
+    cursor: default;
+  }
