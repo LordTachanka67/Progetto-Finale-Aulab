@@ -12,7 +12,22 @@ Route::get('/', function () {
     return view('welcome');
 })->name('homepage');
 
+/* PUBLIC */
 Route::get('/',[PublicController::class , 'homepage'])->name('homepage');
+
+// TEAM
+Route::get('/team', [PublicController::class, 'team'])->name('team');
+
+/* RICERCA */
+Route::get('/search', [PublicController::class, 'searchArticles'])->name('articles.searched');
+
+/* CAMBIO LINGUA */
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
+
+// SOCIAL
+Route::get('/instagram', [PublicController::class, 'instagram'])->name('instagram');
+
+Route::get('/user/{user}',[PublicController::class, 'showUser'])->name('show.user');
 
 /* ROTTE PER CATEGORIE */
 /* route::get('/categories/create',[ArticleController::class,'createCategory'])->name('categories.create'); */
@@ -36,9 +51,6 @@ Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('art
 // Lavora con noi
 Route::get('/lavora-con-noi', [MailController::class, 'revisorForm'])->name('revisorForm')->middleware('auth');
 Route::POST('/lavora-con-noi/invia', [MailController::class, 'revisorApplication'])->name('revisorApplication')->middleware('auth');
-
-// TEAM
-Route::get('/team', [PublicController::class, 'team'])->name('team');
 
 /* REVISORE */
 Route::middleware(['auth','isRevisor'])->group(function () {
@@ -64,12 +76,3 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/dashboard/{article}/update', [DashboardController::class, 'update'])->name('dashboard.update');
     Route::delete('/dashboard/{article}/destroy', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
 });
-
-/* RICERCA */
-Route::get('/search', [PublicController::class, 'searchArticles'])->name('articles.searched');
-
-/* CAMBIO LINGUA */
-Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
-
-// SOCIAL
-Route::get('/instagram', [PublicController::class, 'instagram'])->name('instagram');

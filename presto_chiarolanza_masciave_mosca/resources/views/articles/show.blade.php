@@ -54,7 +54,8 @@
 
                     {{-- CATEGORIA E NOME UTENTE VENDITORE --}}
                     <h6 class="mb-5"><span class="badge me-3"><a
-                                href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ __('ui.' . $article->category->name) }}</a></span>{{__('ui.vendutoDa')}}: {{ $article->user->name }}</h6>
+                                href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ __('ui.' . $article->category->name) }}</a></span> 
+                                <span class="badge me-3" > <a href="{{route('show.user', ['user' => $article->user->id]) }}">{{__('ui.vendutoDa')}}: {{ $article->user->name }}</a></span>  </h6>
 
                     {{-- PREZZO E BOTTONE AGGIUNGI AL CARRELLO --}}
                     <div class="d-flex flex-column align-items-center">

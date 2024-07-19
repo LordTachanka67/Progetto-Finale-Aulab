@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
@@ -30,5 +31,13 @@ class PublicController extends Controller
 
     public function instagram(){
         return view('instagram');
+    }
+
+    public function showUser($user){
+        $user_id = $user;
+        $userRecord = User::where('id', $user_id)->first();
+        $userName = $userRecord->name;
+        $ArticleByUser =  Article::where('user_id', $user_id)->where('is_accepted', true)->paginate(6);
+        return view('articles.byUser',['articles'=>$ArticleByUser, 'userName' => $userName]);
     }
 }
