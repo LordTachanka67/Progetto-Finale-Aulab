@@ -105,4 +105,5 @@ return [
       'success' => 'Operazione completata con successo!',
       'danger' => 'Si è verificato un errore!',
       'validation_errors' => 'Ci sono stati degli errori nella tua richiesta:',
+      'articoliPreferiti' => 'Articoli Preferiti',
 ];

@@ -103,4 +103,5 @@ return [
   'success' => 'Operation completed successfully!',
   'danger' => 'An error has occurred!',
   'validation_errors' => 'There were some errors in your request:',
+  'articoliPreferiti' => 'Favorites items',
 ];

@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-masthead h1="{{__('ui.tuttiGliArticoli')}}" />
+    <x-masthead h1="{{__('ui.articoliPreferiti')}}" />
     <div class="container">
         <div class="row gap-1  justify-content-center justify-content-evenly">
             @if ($favoritesArticles->isEmpty())
