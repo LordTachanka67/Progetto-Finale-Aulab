@@ -121,7 +121,7 @@ return [
         'letters' => __('ui.passwordLetters'),
         'mixed' => __('ui.passwordMixed'),
         'numbers' => __('ui.passwordNumbers'),
-        'symbols' => __('ui.passwordSimbols'),
+        'symbols' => __('ui.passwordSymbols'),
         'uncompromised' => 'The given :attribute has appeared in a data leak. Please choose a different :attribute.',
     ],
     'present' => 'The :attribute field must be present.',
