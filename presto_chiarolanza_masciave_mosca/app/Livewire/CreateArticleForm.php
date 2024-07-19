@@ -30,15 +30,13 @@ class CreateArticleForm extends Component
     public $category_id;
     public $article;
     public $images = [];
-    /* #[Validate('image', message: "Il file non è valido")]
-    #[Validate('max:2048', message: 'Il file deve avere un massimo di 2MB')]
+
+    /* #[Validate('image')]  */
+
+    /* #[Validate('max:2048', message: 'Il file deve avere un massimo di 2MB')]
     #[Validate('dimensions:min_width=800,min_height=600', message: 'L\'immagine deve avere almeno 800x600 pixel')] */
-    
-    #[Validate('max:1024')]
     public $temporary_images;
-
-
-   /*  public function messages()
+    public function messages()
     {
         return [
             'temporary_images.*.dimensions' => 'L\'immagine deve avere almeno 800x600 pixel',
@@ -46,7 +44,7 @@ class CreateArticleForm extends Component
             'temporary_images.*.image' => 'Il file non è valido',
             'temporary_images.max' => 'Puoi caricare al massimo 6 immagini',
         ];
-    } */
+    }
 
     public function store()
     {
