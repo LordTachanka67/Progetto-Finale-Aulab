@@ -24,7 +24,8 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(ArticleController::class)->prefix('articles')->group(function () {
         Route::get('/create', 'create')->name('articles.create');
         Route::post('/store', 'store')->name('articles.store');
-        Route::patch('/preferiti', 'favourites')->name('articles.favourites');
+        Route::post('/preferiti/{article}', 'favourites')->name('articles.favourites');
+        Route::post('/nopreferiti/{article}', 'unfavourites')->name('articles.unfavourites');
     });   
 });
 

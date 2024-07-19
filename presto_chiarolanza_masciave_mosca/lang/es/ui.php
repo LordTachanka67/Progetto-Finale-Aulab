@@ -98,4 +98,8 @@ return [
   'titolo' => 'Título',
   'percheRevisore'   => '¿Por qué se revisará este anuncio?',
   'aggiungiPreferiti' => 'Agregar a favoritos',
+  'rimuoviPreferiti' => 'quitar de favoritos',
+  'success' => '¡La operación se realizó con éxito!',
+  'danger' => '¡Se ha producido un error!',
+  'validation_errors' => 'Hubo algunos errores en su solicitud:',
 ];

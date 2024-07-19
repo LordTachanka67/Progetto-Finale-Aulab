@@ -35,11 +35,21 @@
                                 href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ __('ui.' . $article->category->name) }}</a></span>{{__('ui.vendutoDa')}}: {{ $article->user->name }}</h6>
                         @auth
                         {{-- PREFERITI --}}
-                        <form action="" method="POST">
-                         @csrf
-                         @method('PATCH')
-                            <div class="d-flex align-items-center text-center"><button class="border-0"><i class="bi bi-heart fs-1 text-quar" id="preferiti"></i></button><span class="ms-1 mb-1 text-quar">{{__('ui.aggiungiPreferiti')}}</span></div>
+                        @if ($exist)
+
+                        <form action="{{ route('articles.unfavourites', ['article' => $article]) }}" method="POST">
+                            @csrf
+                            <input  type="text" name="favourites[]" value="{{ $article->id }}" hidden>
+                            <div class="d-flex align-items-center text-center"><button id="favourites" class="border-0 bg-transparent"><i class="bi bi-heart-fill fs-1 text-quar" id="preferiti"></i></button><span class="ms-1 mb-1 text-quar">{{__('ui.rimuoviPreferiti')}}</span></div>
                         </form>
+                        @else
+                        <form action="{{ route('articles.favourites', ['article' => $article]) }}" method="POST">
+                            @csrf
+                            <input type="text" name="favourites[]" value="{{ $article->id }}" hidden>
+                               <div class="d-flex align-items-center text-center"><button id="favourites" class="border-0 bg-transparent"><i class="bi bi-heart fs-1 text-quar" id="preferiti"></i></button><span class="ms-1 mb-1 text-quar">{{__('ui.aggiungiPreferiti')}}</span></div>
+                           </form>
+                        @endif
+                        
                             
                         @endauth
 

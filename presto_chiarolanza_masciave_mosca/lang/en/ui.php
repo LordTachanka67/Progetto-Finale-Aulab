@@ -99,4 +99,8 @@ return [
   'titolo' => 'Title',
   'percheRevisore'   => 'Why do you want to be a reviewer?',
   'aggiungiPreferiti' => 'Add to favorites',
+  'rimuoviPreferiti' => 'Remove from favorites',
+  'success' => 'Operation completed successfully!',
+  'danger' => 'An error has occurred!',
+  'validation_errors' => 'There were some errors in your request:',
 ];

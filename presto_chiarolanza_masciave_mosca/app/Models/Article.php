@@ -45,6 +45,10 @@ class Article extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function favourites(){
+        return $this->belongsToMany(User::class);
+    }
+
     public function images()
     {
         return $this->hasMany(Image::class);
