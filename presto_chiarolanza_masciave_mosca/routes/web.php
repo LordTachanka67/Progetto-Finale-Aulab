@@ -56,13 +56,13 @@ Route::middleware(['auth','isRevisor'])->group(function () {
 /* DASHBOARD UTENTE */
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/dashboard/preferiti', [DashboardController::class, 'preferiti'])->name('dashboard.preferiti');
+    Route::get('/dashboard/recensioni', [DashboardController::class, 'feedbacks'])->name('dashboard.feedbacks');
+    Route::get('/dashboard/carrello', [DashboardController::class, 'cart'])->name('dashboard.cart');
     Route::get('/dashboard/{article}', [DashboardController::class, 'show'])->name('dashboard.show');
     Route::get('/dashboard/{article}/edit', [DashboardController::class, 'edit'])->name('dashboard.edit');
     Route::put('/dashboard/{article}/update', [DashboardController::class, 'update'])->name('dashboard.update');
     Route::delete('/dashboard/{article}/destroy', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
-    Route::get('/dashboard/preferiti', [DashboardController::class, 'favorites'])->name('dashboard.favorites');
-    Route::get('/dashboard/recensioni', [DashboardController::class, 'feedbacks'])->name('dashboard.feedbacks');
-    Route::get('/dashboard/carrello', [DashboardController::class, 'cart'])->name('dashboard.cart');
 });
 
 /* RICERCA */

@@ -18,7 +18,7 @@
                     </li>
                     {{-- Preferiti --}}
                     <li class="nav-item">
-                        <a class="nav-link buttonOffcanvas ms-3 fs-5 d-none" href="{{ route('dashboard.favorites') }}"><i class="bi bi-hearts"></i> {{__('ui.preferiti')}} </a>
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5 " href="{{ route('dashboard.preferiti') }}"><i class="bi bi-hearts"></i> {{__('ui.preferiti')}} </a>
                     </li>
                     {{-- Carrello --}}
                     <li class="nav-item">

@@ -29,14 +29,12 @@
 
                 <div class="col-12 col-md-4 p-3 text-center">
                     {{-- TITOLO --}}
-                    <h2 class="display-3 article-text">{{ $article->title }}</h2>
-                    {{-- CATEGORIA E NOME UTENTE VENDITORE --}}
-                    <h6 class="mb-5"><span class="badge me-3"><a
-                                href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ __('ui.' . $article->category->name) }}</a></span>{{__('ui.vendutoDa')}}: {{ $article->user->name }}</h6>
+                    <h2 class="display-3 article-text">{{ $article->title }}</h2>  
+                    {{-- PREFERITI --}}
+                    <span class="text-center">
                         @auth
-                        {{-- PREFERITI --}}
                         @if ($exist)
-
+    
                         <form action="{{ route('articles.unfavourites', ['article' => $article]) }}" method="POST">
                             @csrf
                             <input  type="text" name="favourites[]" value="{{ $article->id }}" hidden>
@@ -50,8 +48,13 @@
                            </form>
                         @endif
                         
-                            
                         @endauth
+                    </span>
+                    
+
+                    {{-- CATEGORIA E NOME UTENTE VENDITORE --}}
+                    <h6 class="mb-5"><span class="badge me-3"><a
+                                href="{{ route('categories.byCategory', ['category' => $article->category]) }}">{{ __('ui.' . $article->category->name) }}</a></span>{{__('ui.vendutoDa')}}: {{ $article->user->name }}</h6>
 
                     {{-- PREZZO E BOTTONE AGGIUNGI AL CARRELLO --}}
                     <div class="d-flex flex-column align-items-center">

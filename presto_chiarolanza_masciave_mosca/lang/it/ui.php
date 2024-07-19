@@ -101,6 +101,7 @@ return [
       'titolo' => 'Titolo',
       'percheRevisore'   => 'Perche vuoi candidarti come revisore?',
       'aggiungiPreferiti' => 'Aggiungi ai preferiti',
+      'rimuoviPreferiti' => 'Rimuovi dai preferiti',
       'success' => 'Operazione completata con successo!',
       'danger' => 'Si è verificato un errore!',
       'validation_errors' => 'Ci sono stati degli errori nella tua richiesta:',

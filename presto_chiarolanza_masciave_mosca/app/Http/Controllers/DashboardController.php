@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -59,8 +60,14 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.index')->with('success', __('ui.articoloEliminato'));
     }
 
-    function favorites(){
-        return view('dashboard.preferiti');
+    public function preferiti(){
+        $pivotRecords = DB::table('article_user')
+    ->where('user_id', Auth::id())
+    ->get();
+
+    $favoritesArticles = Article::whereIn('id', $pivotRecords->pluck('article_id'))->paginate(6);
+    /* dd($favoritesArticles); */
+        return view('dashboard.preferiti', compact('favoritesArticles'));
     }
 
     function cart(){
