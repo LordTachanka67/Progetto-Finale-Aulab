@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\File;
 class CreateArticleForm extends Component
 {
     use WithFileUploads;
-    
+
     #[Validate('required', message: 'Il titolo è obbligatorio')]
-    #[Validate('min:5' , message: 'Il titolo deve avere almeno 5 caratteri')]
+    #[Validate('min:5', message: 'Il titolo deve avere almeno 5 caratteri')]
     #[Validate('max:255', message: 'Il titolo deve avere massimo 255 caratteri')]
     public $title;
     #[Validate('required', message: 'La descrizione è obbligatoria')]
@@ -30,23 +30,28 @@ class CreateArticleForm extends Component
     public $category_id;
     public $article;
     public $images = [];
-    #[Validate('image', message: "Il file non è valido")]
+    /* #[Validate('image', message: "Il file non è valido")]
     #[Validate('max:2048', message: 'Il file deve avere un massimo di 2MB')]
-    #[Validate('dimensions:min_width=800,min_height=600', message: 'L\'immagine deve avere almeno 800x600 pixel')]
-    public $temporary_images;
+    #[Validate('dimensions:min_width=800,min_height=600', message: 'L\'immagine deve avere almeno 800x600 pixel')] */
     
+    #[Validate('max:1024')]
+    public $temporary_images;
 
-    public function messages(){
+
+   /*  public function messages()
+    {
         return [
-            'temporary_images.*.dimensions' =>'L\'immagine deve avere almeno 800x600 pixel',
+            'temporary_images.*.dimensions' => 'L\'immagine deve avere almeno 800x600 pixel',
             'temporary_images.*.max' => 'Il file deve avere un massimo di 2MB',
             'temporary_images.*.image' => 'Il file non è valido',
             'temporary_images.max' => 'Puoi caricare al massimo 6 immagini',
         ];
-    }
+    } */
 
-    public function store() {
+    public function store()
+    {
         $this->validate();
+       
         $this->article = Article::create([
             'title' => $this->title,
             'description' => $this->description,
@@ -54,9 +59,9 @@ class CreateArticleForm extends Component
             'category_id' => $this->category_id,
             'user_id' => Auth::id(),
         ]);
-        
-        if(count($this->images) > 0){
-            foreach($this->images as $image){
+
+        if (count($this->images) > 0) {
+            foreach ($this->images as $image) {
                 $newFileName = "articles/{$this->article->id}";
                 $newImage = $this->article->images()->create([
                     'path' => $image->store($newFileName, 'public'),
@@ -73,30 +78,31 @@ class CreateArticleForm extends Component
 
         $this->reset();
 
-        
+
         session()->flash('success', 'Articolo creato con successo');
     }
-    
-    public function updatedTemporaryImages(){
-        if($this->validate([
+
+    public function updatedTemporaryImages()
+    {
+        if ($this->validate([
             'temporary_images.*' => 'image|max:2048|dimensions:min_width=800,min_height=600',
             'temporary_images' => 'max:6',
-            ])){
-              
-                foreach($this->temporary_images as $image){
-                    $this->images[] = $image;
-                }
+        ])) {
+
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
             }
-        }
-        
-        public function removeImage($key){
-            if(in_array($key, array_keys($this->images))){
-                unset($this->images[$key]);
-            }
-        }
-        public function render()
-        {
-            return view('livewire.create-article-form');
         }
     }
-    
+
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
+    }
+    public function render()
+    {
+        return view('livewire.create-article-form');
+    }
+}
