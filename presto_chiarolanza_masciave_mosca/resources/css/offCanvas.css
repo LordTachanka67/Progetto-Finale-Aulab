@@ -1,0 +1,64 @@
+@media screen and (min-width: 576px){
+    /* offcanvas */
+    .offcanvas{
+     padding-right: 1rem;
+     padding-top: 1rem;
+     background-color: var(--main);
+     /* color: var(--quar) !important; */
+     border: 5px var(--quar) solid;
+     border-radius: 150px 0px 0px 150px;
+     align-items: end;
+     border-left: var(--quar) 10px solid !important;
+     text-align: end;
+ 
+     /* margin: 2rem 0rem; */
+    }
+ 
+    #UsedLanguage{
+     left: 0%;
+     bottom: 0.1rem;
+    }
+ }
+ 
+ @media screen and (max-width: 575px){
+     .offcanvas{
+         padding-right: 1rem;
+         padding-top: 1rem;
+         background-color: var(--main);
+         /* color: var(--quar) !important; */
+         border: 5px var(--quar) solid;
+         /* border-radius: 50% 0px 0px 50%; */
+         align-items: end;
+         border-left: var(--quar) 5px solid !important;
+         text-align: end;
+     
+         /* margin: 2rem 0rem; */
+        }
+ 
+        #UsedLanguage{
+         left: -15%;
+         bottom: 0.1rem;
+        }
+ }
+ 
+    #close{
+     position: absolute;
+     right: 1rem !important;
+     top: 1.5rem;
+ 
+    }
+ 
+ 
+    #logout{
+     bottom: 0.1rem;
+     right: -1rem;
+    }
+ 
+    .buttonOffcanvas{
+        color: var(--quar)
+    }
+    
+    .buttonOffcanvas:hover{
+        background-color: var(--main) !important; 
+        color: var(--ter); 
+    } 

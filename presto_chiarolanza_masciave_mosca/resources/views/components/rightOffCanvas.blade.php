@@ -8,17 +8,17 @@
                 {{ auth()->user()->name }}, </h5>
                 <ul class="list-unstyled">
                     <li class="nav-item">
-                        <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('articles.create') }}"><i
-                                class="bi bi-plus-square"></i> {{__('ui.inserisciAnnuncio')}} </a>
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('articles.create') }}"> {{__('ui.inserisciAnnuncio')}} <i
+                                class="bi bi-plus-square"></i></a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('dashboard.index') }}"><i class="bi bi-clipboard-data">
-                        </i> {{__('ui.dashboard')}} </a>
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5" href="{{ route('dashboard.index') }}"> {{__('ui.dashboard')}} <i class="bi bi-clipboard-data">
+                        </i></a>
                     </li>
                     {{-- Preferiti --}}
                     <li class="nav-item">
-                        <a class="nav-link buttonOffcanvas ms-3 fs-5 " href="{{ route('dashboard.preferiti') }}"><i class="bi bi-hearts"></i> {{__('ui.preferiti')}} </a>
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5 " href="{{ route('dashboard.preferiti') }}"> {{__('ui.preferiti')}} <i class="bi bi-hearts"></i></a>
                     </li>
                     {{-- Carrello --}}
                     <li class="nav-item">
@@ -27,23 +27,23 @@
                     </li>
                     {{-- recensioni --}}
                     <li class="nav-item">
-                        <a class="nav-link buttonOffcanvas ms-3 fs-5 d-none" href="{{ route('dashboard.feedbacks') }}"><i class="bi bi-star-half"></i>
-                        </i> {{__('ui.recensioni')}} </a>
+                        <a class="nav-link buttonOffcanvas ms-3 fs-5 d-none" href="{{ route('dashboard.feedbacks') }}"> {{__('ui.recensioni')}} <i class="bi bi-star-half"></i>
+                        </i></a>
                     </li>
 
                     @if (auth()->user()->is_revisor)
                     <div>
                       <hr class="mt-5">
                       <li class="nav-item">
-                          <a class="nav-link buttonOffcanvas ms-3 fs-5" href=" {{ route('revisor.index') }} "><i
-                                  class="bi bi-suitcase-lg"></i> {{__('ui.articoliDaRevisionare')}}<span class="ms-2 top-0 start-100 translate-middle rounded-pill bg-ter px-3 py-1 text-center">{{$revisor_pending_number}}</span></a>
+                          <a class="nav-link buttonOffcanvas ms-3 fs-5" href=" {{ route('revisor.index') }} "> <span class="ms-2 top-0 start-100 translate-middle rounded-pill bg-ter px-3 py-1 text-center">{{$revisor_pending_number}}</span> {{__('ui.articoliDaRevisionare')}} <i
+                                  class="bi bi-suitcase-lg"></i></a>
                                     
                       </li>
                     </div>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link buttonOffcanvas ms-3 mt-5 fs-5" href=" {{ route('revisorForm') }} "><i
-                                    class="bi bi-suitcase-lg"></i> {{__('ui.lavoraConNoi')}} </a>
+                            <a class="nav-link buttonOffcanvas ms-3 mt-5 fs-5" href=" {{ route('revisorForm') }} "> {{__('ui.lavoraConNoi')}} <i
+                                    class="bi bi-suitcase-lg"></i></a>
                         </li>
                     @endif
 

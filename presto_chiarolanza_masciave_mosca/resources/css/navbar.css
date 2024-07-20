@@ -33,14 +33,6 @@
     color: var(--ter); 
 }
 
-.buttonOffcanvas{
-    color: var(--quar)
-}
-
-.buttonOffcanvas:hover{
-    background-color: white !important; 
-    color: var(--ter); 
-}
 
 .linkFooter{
     background-color: var(--main) !important;  

@@ -6,7 +6,7 @@
 
 @if (session('danger'))
     <div class="alert alert-danger container w-50 text-center">
-        {{ s__('ui.danger') }}
+        {{ __('ui.danger') }}
     </div>
 @endif
 

@@ -50,11 +50,18 @@
    }
    
    /*Text*/
-   .card-title {
-    color: #333;
-    font-size: 1.5em;
-    font-weight: 600;
-    line-height: 2rem;
+   .dash-card-title {
+    color: var(--quar);
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    /* font-size: 1.5em; */
+    font-weight: bold;
+    /* line-height: 2rem; */
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
    }
    
    .card-subtitle {
@@ -85,34 +92,5 @@
     transform: scale(1.1);
    }
 
-   .offcanvas{
-    padding-right: 1rem;
-    padding-top: 1rem;
-    /* background-color: var(--sec); */
-    /* color: var(--quar) !important; */
-    border: 5px var(--quar) solid;
-    border-radius: 50% 0px 0px 50%;
-    align-items: end;
-    border-left: var(--quar) 10px solid !important;
-    text-align: end;
-
-    /* margin: 2rem 0rem; */
-   }
-
-   #close{
-    position: absolute;
-    right: 1rem !important;
-    top: 1.5rem;
 
 
-   }
-
-   #UsedLanguage{
-    left: 10%;
-    bottom: 0.1rem;
-   }
-
-   #logout{
-    bottom: 0.1rem;
-    right: -1rem;
-   }
