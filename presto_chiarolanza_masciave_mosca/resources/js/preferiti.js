@@ -5,4 +5,4 @@ function addFavorite() {
     preferiti.classList.toggle('bi-heart')
 }
 
-preferiti.addEventListener('click', addFavorite);
+preferiti.addEventListener('click', addFavorite());

@@ -2,7 +2,7 @@
 
     <x-masthead h1='{{ $article->title }}' />
 
-    <div class="container">
+    <div class="container ">
         <a class="btn btn-quar mb-3" href="{{ route('revisor.index') }}"><i class="bi bi-arrow-bar-left"></i>
             {{ __('ui.tornaDashboard') }}</a>
         {{-- VISTA SHOW PER IL PRODOTTO --}}
@@ -16,9 +16,9 @@
                     {{-- TITOLO --}}
                     <h2 class="display-3 article-text">{{ $article->title }}</h2>
                     {{-- CATEGORIA E NOME UTENTE VENDITORE --}}
-                    <h6 class="mb-5"><span
-                            class="badge me-3"><a>{{ $article->category->name }}</a></span>{{ __('ui.vendutoDa') }}:
-                        {{ $article->user->name }}</h6>
+                    <h6 class="mb-5"><span class="badge me-3"><a>{{ $article->category->name }}</a></span>
+                        <span class="badge me-3">{{ __('ui.vendutoDa') }}: {{ $article->user->name }}</span>
+                    </h6>
 
                     {{-- PREZZO E BOTTONE AGGIUNGI AL CARRELLO --}}
                     <div class="d-flex flex-column align-items-center">
@@ -28,18 +28,31 @@
 
                     <div class="row my-5 justify-content-center">
                         <div class="col-6 col-md-4 text-center">
-                            <form action="{{ route('article.reject', ['article' => $article]) }}" method="POST">
+                            
+                            
+                            <form  action="{{ route('article.reject', ['article' => $article]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn btn-danger py-2 px-3 fs-3">{{-- {{ __('ui.rifiuta') }} --}} <i class="bi bi-x-lg"></i> </button>
+
+
+                                <button type="" class="btn btn-danger py-2 px-3 fs-3">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+
+                                <div class="" >
+                                    <label for="">Motivo del rifiuto</label>
+                                    <textarea name="reason" id="" cols="30" rows="10"></textarea>
+                                </div>
+
+                               
                             </form>
                         </div>
                         <div class="col-6 col-md-4 text-center">
                             <form action="{{ route('article.accept', ['article' => $article]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit"
-                                    class="btn btn-success py-2 px-3 fs-3">{{-- {{ __('ui.accetta') }} --}} <i class="bi bi-check2"></i> </button>
+                                <button type="submit" class="btn btn-success py-2 px-3 fs-3">{{-- {{ __('ui.accetta') }} --}} <i
+                                        class="bi bi-check2"></i> </button>
                             </form>
                         </div>
                     </div>
@@ -51,28 +64,5 @@
                 </div>
             </div>
         </div>
-
-        {{-- BOTTONE RIFIUTA E ACCETTA --}}
-        {{-- <div class="row my-5 justify-content-center">
-                <div class="col-6 col-md-4 text-center">
-                    <form action="{{route('article.reject', ['article' => $article])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit" class="btn btn-danger py-2 px-3">{{__('ui.rifiuta')}}</button>
-                    </form> 
-                </div>
-                <div class="col-6 col-md-4 text-center">
-                    <form action="{{route('article.accept', ['article' => $article])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit" class="btn btn-success py-2 px-3">{{__('ui.accetta')}}</button>
-                    </form>
-                </div>
-            </div> --}}
     </div>
-
-
-    </div>
-
-    {{-- <a href="{{route('articles.show', compact('article'))}}" class="btn btn-quar">Vai all'articolo</a> --}}
 </x-layout>

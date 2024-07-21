@@ -1,14 +1,19 @@
-
-
 <div class="card-dashboard mb-3">
-    <div class="card-info">
-        <img src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : '/background/default.jpg'}}" class=" card-img-top" alt="{{$article->title}}">
-        <div class="dash-card-title">{{$article->title}}</div>
-        <div>{{__('ui.prezzo')}}: €{{ number_format($article->price, 2, ',') }}</div>
+    <div class="card-info position-relative">
+        <img src="{{ $article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : '/background/default.jpg' }}"
+            class=" card-img-top" alt="{{ $article->title }}">
+        <div class="dash-card-title">{{ $article->title }}
+            <span class="text-danger position-absolute end-0">
+                @if ($article->reason)
+                <i class="bi bi-info-circle"></i>
+                @endif
+            </span>
+        </div>
+        <div>{{ __('ui.prezzo') }}: €{{ number_format($article->price, 2, ',') }}</div>
     </div>
     <ul class="card-social p-0">
         <li class="card-social__item">
-            <a href="{{route('dashboard.show', compact('article'))}}">
+            <a href="{{ route('dashboard.show', compact('article')) }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-search" viewBox="0 0 16 16">
                     <path
@@ -16,9 +21,9 @@
                 </svg>
             </a>
         </li>
-        
+
         <li class="card-social__item">
-            <a href="{{route('dashboard.edit', compact('article'))}}">
+            <a href="{{ route('dashboard.edit', compact('article')) }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-pencil-square" viewBox="0 0 16 16">
                     <path
@@ -28,7 +33,7 @@
                 </svg>
             </a>
         </li>
-       
+
         <li class="card-social__item">
             <form action="{{ route('dashboard.destroy', compact('article')) }}" method="post">
                 @csrf

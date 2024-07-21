@@ -35,7 +35,11 @@ class RevisorController extends Controller
         return redirect()->route('revisor.index')->with('cancel', __('ui.annullaAzione'));
     }
     
-    public function reject(Article $article){
+    public function reject(Article $article,Request $request){
+        /* dd($request->all()); */
+        $article->update([
+            'reason' => $request->reason,
+        ]);
         $article->setAccepted(false);
         return redirect()->route('revisor.index')->with('cancel', __('ui.annullaAzione'));
     }   

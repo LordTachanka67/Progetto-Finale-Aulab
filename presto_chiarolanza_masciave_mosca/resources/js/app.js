@@ -19,11 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
-
-
-
 import 'aos/dist/aos.css'; // Importa il file CSS di AOS
 
 
