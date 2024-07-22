@@ -66,6 +66,7 @@
                     <h5 class="mt-4 ms-3">{{ __('ui.descrizione') }}: </h5>
                     <p class="ms-5 mt-2 mb-5">{{ $article->description }}</p>
                 </div>
+                <livewire:select-option/>
             </div>
         </div>
     </div>
