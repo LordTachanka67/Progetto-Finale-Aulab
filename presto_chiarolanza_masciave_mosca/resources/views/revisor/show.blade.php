@@ -57,6 +57,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+
+                    <x-safeSearch :article="$article" />
+                </div>
                 {{-- DESCRIZIONE --}}
                 <div class="col-12 mt-3 bg-quar">
                     <h5 class="mt-4 ms-3">{{ __('ui.descrizione') }}: </h5>

@@ -14,7 +14,6 @@ return [
   "dashboard" => "Panel de control",
   "articoliDaRevisionare" => "Artículos para revisar",
   "ciSono" => "Hay",
-  "articoliDaRevisionare" => "artículos para revisar",
   "articoliAccettati" => "Artículos aceptados",
   "articoliRifiutati" => "Artículos rechazados",
   "articoliCorrelati" => "Artículos relacionados",

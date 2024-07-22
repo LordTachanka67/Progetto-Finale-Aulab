@@ -17,7 +17,11 @@
             @foreach ($articles_pending as $article)
                 <div class="col-12 col-md-5 col-lg-3">
                     <x-card-pending :article="$article" />
+                   {{--  <x-safeSearch :article="$article" /> --}}
                 </div>
+                
+               
+                
             @endforeach
                 
             @endif

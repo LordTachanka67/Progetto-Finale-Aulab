@@ -33,4 +33,11 @@ class Image extends Model
     {
         return $this->belongsTo(Article::class);
     }
+
+    protected function casts(): array{
+
+        return [
+            'labels' => 'array',
+        ];
+    }
 }

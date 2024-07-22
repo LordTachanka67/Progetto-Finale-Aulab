@@ -85,8 +85,7 @@
                                     href="{{ route('articles.show',['article' => $correlatedArticle]) }}">
 
                                     <div class="card-body text-center">
-                                        <img src="{{ $correlatedArticle->images->isNotEmpty() ? Storage::url($correlatedArticle->images->first()->path) : '/background/default.jpg' }}"
-                                            class=" card-img-top" alt="{{ $correlatedArticle->title }}">
+                                        <img src="{{$correlatedArticle->images->isNotEmpty() ? $correlatedArticle->images->first()->getUrl(400, 400) : '/background/default.jpg'}}" class="card-img-top" alt="{{$correlatedArticle->title}}">
                                         <h5 class="card-title text-truncate text-dark ">{{ $correlatedArticle->title }}</h5>
                                         <p class="card-title text-dark lead">
                                             €{{ number_format($correlatedArticle->price, 2, ',') }} </p>
