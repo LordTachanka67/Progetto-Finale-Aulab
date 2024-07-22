@@ -15,7 +15,7 @@ return [
   "dashboard" => "Dashboard",
   "articoliDaRevisionare" => "Articles to review",
   "ciSono" => "There are",
-  "articoliDaRevisionare" => "articles to review",
+  "articoliDaRevisionare" => "Articles to review",
   "articoliAccettati" => "Accepted articles",
   "articoliRifiutati" => "Rejected articles",
   "articoliCorrelati" => "Related articles",
