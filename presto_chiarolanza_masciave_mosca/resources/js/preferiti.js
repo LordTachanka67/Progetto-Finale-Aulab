@@ -1,10 +1,20 @@
 const preferiti = document.getElementById('preferiti');
-
+const SWITCH = document.getElementById('switch');
 function addFavorite() {
     preferiti.classList.toggle('bi-heart-fill')
     preferiti.classList.toggle('bi-heart')
 }
 
+function switchIndex() {
+    SWITCH.toggleAttribute('checked');
+    if (SWITCH.checked) {
+        console.log('ciao');
+    } else {
+        console.log('buongiorno');
+    }
+}
+
+SWITCH.addEventListener('click', switchIndex);
 /* preferiti.addEventListener('click', addFavorite()); */
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -22,3 +32,4 @@ document.addEventListener("DOMContentLoaded", function() {
         sessionStorage.setItem(scrollKey, window.scrollY);
     });
 });
+

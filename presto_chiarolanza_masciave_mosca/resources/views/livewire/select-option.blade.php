@@ -9,7 +9,7 @@
          {{-- <label class="form-check-label" for="flexSwitchCheckChecked">Opzione</label> --}}
          </div>
      </div>
-     @dd($articles_pending)
+     {{-- @dd($articles_pending) --}}
         @switch($selectedOption %2 == 0)
             @case(true)
             @if ($articles_pending->isEmpty())

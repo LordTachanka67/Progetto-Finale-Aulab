@@ -12,20 +12,33 @@
                 <x-cancel />
             </div>
             @endif
-            <livewire:select-option 
+            {{-- @dd($articles_pending) --}}
+            {{-- <livewire:select-option 
             :articles_pending="$articles_pending"
-            />
+            /> --}}
+            <div class="col-12">
+                <div class="form-check form-switch">
+                <span class="form-check-label" id="griglia">Griglia</span>
+                <input wire:click="increment" class="form-check-input" type="checkbox" role="switch" id="switch">
+                <span class="form-check-label"  id="griglia">Elenco</span>
+       
+                {{-- <label class="form-check-label" for="flexSwitchCheckChecked">Opzione</label> --}}
+                </div>
+            </div>
 
-            {{-- @if ($articles_pending->isEmpty())
+            @if ($articles_pending->isEmpty())
                 <p>{{__('ui.nessunArticoloDaRevisionare')}}</p>
             @else
+          <div id="articlesPending">
+            
+          </div>
             @foreach ($articles_pending as $article)
                 <div class="col-12 col-md-5 col-lg-3">
-                    <x-card-pending :article="$article" /> --}}
+                    <x-card-pending :article="$article" />
                    {{--  <x-safeSearch :article="$article" /> --}}
-                {{-- </div>                
+                </div>                
             @endforeach                
-            @endif --}}
+            @endif
         </div>
         <div class="d-flex justify-content-center">
             <div class="col-12">

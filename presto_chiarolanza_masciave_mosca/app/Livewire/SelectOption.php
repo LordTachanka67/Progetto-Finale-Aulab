@@ -7,6 +7,7 @@ use Livewire\Component;
 class SelectOption extends Component
 {
     public $selectedOption=0;
+    
 
         public function increment()
         {
