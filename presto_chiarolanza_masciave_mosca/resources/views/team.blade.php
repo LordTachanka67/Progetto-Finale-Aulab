@@ -22,7 +22,7 @@
          <div class="col-4 text-center p-5">
             <h3>Giovanni Chiarolanza</h3>
             <h6 class="fst-italic">Metti margine 3</h6>
-            <div><img class="teamPicture m-4 p-2 " src="/background/default.jpg" alt=""></div>
+            <div><img class="teamPicture m-4 p-2 " src="/background/giovanni.jpg" alt=""></div>
             <p>Preciso e puntiglioso, Giovanni sa che il diavolo si nasconde nei dettagli. La sua frase "metti margine 3" risuona come un mantra di perfezione nei layout, garantendo siti web impeccabili.</p>
          </div>
       </div>
