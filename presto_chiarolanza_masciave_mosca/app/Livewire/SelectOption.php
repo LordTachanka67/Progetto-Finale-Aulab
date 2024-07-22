@@ -6,11 +6,13 @@ use Livewire\Component;
 
 class SelectOption extends Component
 {
-    public $selectedOption;
+    public $selectedOption=0;
 
         public function increment()
         {
-           $selectedOption = $this->selectedOption + 1;
+           $selectedOption = $this->selectedOption++;
+           return $selectedOption;
+           dd($selectedOption);
         }
     
         public function render()

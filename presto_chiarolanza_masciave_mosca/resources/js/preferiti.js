@@ -1,11 +1,4 @@
 const preferiti = document.getElementById('preferiti');
-const switcher = document.getElementById('switch');
-
-function switchIndex() {
-    switcher.toggleAttribute('checked')
-}
-
-switcher.addEventListener('change', switchIndex());
 
 function addFavorite() {
     preferiti.classList.toggle('bi-heart-fill')
