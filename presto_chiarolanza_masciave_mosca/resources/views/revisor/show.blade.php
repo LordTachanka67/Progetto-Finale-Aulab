@@ -39,7 +39,7 @@
                                     <i class="bi bi-x-lg"></i>
                                 </button>
 
-                                <div class="" >
+                                <div class="d-none" >
                                     <label for="">Motivo del rifiuto</label>
                                     <textarea name="reason" id="" cols="30" rows="10"></textarea>
                                 </div>

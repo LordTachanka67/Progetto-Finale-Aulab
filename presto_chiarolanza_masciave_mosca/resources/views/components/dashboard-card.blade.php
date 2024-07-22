@@ -3,7 +3,7 @@
         <img src="{{ $article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : '/background/default.jpg' }}"
             class=" card-img-top" alt="{{ $article->title }}">
         <div class="dash-card-title">{{ $article->title }}
-            <span class="text-danger position-absolute end-0">
+            <span class="text-danger position-absolute end-0 d-none">
                 @if ($article->reason)
                 <i class="bi bi-info-circle"></i>
                 @endif
