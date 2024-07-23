@@ -55,7 +55,7 @@
                 </ul>
 
                 {{-- <span class="position-absolute bottom-0 start-1 mb-2" id="UsedLanguage">{{__('ui.language')}} <x-_locale lang="{{__('ui.language')}}"/></span> --}}
-                <span class="position-absolute start-1 ps-0 mb-3 text-quar" id="UsedLanguage"><img class="me-2"
+                <span class="position-absolute start-1 ms-5 ps-0 mb-3 text-quar" id="UsedLanguage"><img class="me-2"
                         src="{{ asset('vendor/blade-flags/language-' . __('ui.language') . '.svg') }}" width="32"
                         height="32" alt="flag">{{ __('ui.language') }}</span>
 
