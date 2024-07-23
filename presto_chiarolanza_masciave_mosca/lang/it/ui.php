@@ -16,7 +16,7 @@ return [
       "dashboard" => "Dashboard",
       "articoliDaRevisionare" => "Articoli da revisionare",
       "ciSono" => "Ci sono",
-      "articoliDaRevisionare" => "Articoli da revisionare",
+
       "articoliAccettati" => "Articoli accettati",
       "articoliRifiutati" => "Articoli rifiutati",
       "articoliCorrelati" => "Articoli correlati",

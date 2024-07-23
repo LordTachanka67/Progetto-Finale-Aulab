@@ -15,7 +15,7 @@ return [
   "dashboard" => "Dashboard",
   "articoliDaRevisionare" => "Articles to review",
   "ciSono" => "There are",
-  "articoliDaRevisionare" => "Articles to review",
+ 
   "articoliAccettati" => "Accepted articles",
   "articoliRifiutati" => "Rejected articles",
   "articoliCorrelati" => "Related articles",
@@ -23,7 +23,7 @@ return [
   "nessunArticoloRifiutato" => "No rejected articles",
   "nessunArticoloInFaseDiElaborazione" => "No articles in processing",
   "nessunArticoloAccettato" => "No accepted articles",
-  "nonCiSonoArticoli" => "There are no articles",
+
   "abbigliamento" => "clothing",
   "accessori" => "accessories",
   "animali domestici" => "pets",

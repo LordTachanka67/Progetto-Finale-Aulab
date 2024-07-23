@@ -15,16 +15,16 @@
         <li class="nav-item"><a href="{{ Route('team') }}"
                 class="nav-link linkFooter px-2 text-body-secondary">{{ __('ui.about') }}</a></li>
     </ul>
-    <div class="row justify-content-between">
+    <div class="row  justify-content-center justify-content-md-between ">
         {{-- LOCALE BUTTONS --}}
-        <div class="text-star ms-5 col-5">
+        <div class="text-center  col-12 col-md-5 justify-content-center ">
             <x-_locale lang="it" />
             <x-_locale lang="en" />
             <x-_locale lang="es" />
         </div>
         {{-- SOCIAL BUTTON --}}
-        <div class="text-center col-5">
-            <div class="btn__container">
+        <div class="text-center col-12 col-md-5 ">
+            <div class="btn__container justify-content-center">
                 <a href="{{ Route('instagram') }}" target="_blank" class="btn-i">
                     <i class="social-btn bi bi-instagram"></i>
                     <span>instagram</span>

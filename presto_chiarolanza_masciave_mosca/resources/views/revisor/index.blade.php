@@ -9,7 +9,7 @@
             </div>
 
             @if ($lastModified)
-                <div class="col-10">
+                <div class="col-10 text-center">
                     <x-cancel />
                 </div>
             @endif
