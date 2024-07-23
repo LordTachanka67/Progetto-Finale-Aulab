@@ -9,7 +9,7 @@
                 @endif
             </span>
         </div>
-        <div>{{ __('ui.prezzo') }}: €{{ number_format($article->price, 2, ',') }}</div>
+        <div>{{ __('ui.prezzo') }}:<br> €{{ number_format($article->price, 2, ',') }}</div>
     </div>
     <ul class="card-social p-0">
         <li class="card-social__item">

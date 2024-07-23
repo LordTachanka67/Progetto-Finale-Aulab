@@ -168,6 +168,22 @@ label {
     top: 3rem;
   }
 
-  #favouidButton{
-  
+
+  #switch{
+    position: absolute;
+    left: 6rem;
+    background-color: var(--quar);
+    border: 2px var(--quar) solid;
+    box-shadow: none;
 }
+
+  #griglia{
+    position: absolute;
+    left: 0rem;
+  }
+
+  #elenco{
+    position: absolute;
+    left: 6.5rem;
+  }
+

@@ -102,4 +102,17 @@ return [
   'danger' => '¡Se ha producido un error!',
   'validation_errors' => 'Hubo algunos errores en su solicitud:',
   'articoliPreferiti' => 'Artículos favoritos',
+  'user' => 'Usuario',
+  'azioni' => 'Acciones',
+  'griglia' => 'Grilla',
+  'elenco' => 'Lista',
+  'labels' => 'Etiquetas',
+  'rating' => 'Calificación',
+  'adult' => 'Contenido para adultos',
+  'violence' => 'Violencia',
+  'spoof' => 'Falsificación',
+  'racy' => 'Racismo',
+  'medical' => 'Contenido sensible',
+  'noLabels' => 'No hay etiquetas',
+
 ];

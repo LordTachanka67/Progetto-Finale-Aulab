@@ -33,18 +33,17 @@
                     {{-- PREFERITI --}}
                     <span class="text-center">
                         @auth
-                        @if ($exist)
-    
-                        <form action="{{ route('articles.unfavourites', ['article' => $article]) }}" method="POST">
+                        @if ($exist)    
+                    <form action="{{ route('articles.unfavourites', ['article' => $article]) }}" method="POST">
                             @csrf
                             <input  type="text" name="favourites[]" value="{{ $article->id }}" hidden>
-                            <div class="d-flex align-items-center text-center"><button id="favourites" class="border-0 bg-transparent"><i class="bi bi-heart fs-1 text-quar" id="preferiti"></i></button><span class="ms-1 mb-1 text-quar">{{__('ui.rimuoviPreferiti')}}</span></div>
+                            <div class="d-flex align-items-center text-center"><button id="favourites" class="border-0 bg-transparent"><i class="bi bi-heart-fill fs-1 text-quar" id="preferiti"></i></button><span class="ms-1 mb-1 text-quar">{{__('ui.rimuoviPreferiti')}}</span></div>
                         </form>
                         @else
                         <form action="{{ route('articles.favourites', ['article' => $article]) }}" method="POST">
                             @csrf
                             <input type="text" name="favourites[]" value="{{ $article->id }}" hidden>
-                               <div class="d-flex align-items-center text-center"><button id="favourites" class="border-0 bg-transparent"><i class="bi bi-heart-fill fs-1 text-quar" id="preferiti"></i></button><span class="ms-1 mb-1 text-quar">{{__('ui.aggiungiPreferiti')}}</span></div>
+                               <div class="d-flex align-items-center text-center"><button id="favourites" class="border-0 bg-transparent"><i class="bi bi-heart fs-1 text-quar" id="preferiti"></i></button><span class="ms-1 mb-1 text-quar">{{__('ui.aggiungiPreferiti')}}</span></div>
                            </form>
                         @endif
                         

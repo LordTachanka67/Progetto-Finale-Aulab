@@ -3,19 +3,27 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\Session;
 
 class SelectOption extends Component
 {
-    public $selectedOption=0;
+    #[Session]
+    public $selectedOption;
+    public $articles_pending = [];
+
     
+        public function mount($articles_pending){
+            $this->articles_pending = $articles_pending;
+           
+        }
 
         public function increment()
         {
-           $selectedOption = $this->selectedOption++;
-           return $selectedOption;
-           dd($selectedOption);
+            $this->selectedOption++;     
+            return $this->selectedOption;
         }
-    
+        
+
         public function render()
         {
             return view('livewire.select-option');

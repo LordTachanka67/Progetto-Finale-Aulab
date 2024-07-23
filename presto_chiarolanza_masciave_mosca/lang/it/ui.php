@@ -106,4 +106,18 @@ return [
       'danger' => 'Si è verificato un errore!',
       'validation_errors' => 'Ci sono stati degli errori nella tua richiesta:',
       'articoliPreferiti' => 'Articoli Preferiti',
+      'user' => 'Utente',
+      'azioni' => 'Azioni',
+      'griglia' => 'Griglia',
+      'elenco' => 'Elenco',
+      'labels' => 'Etichette',
+      'rating' => 'Valutazione',
+      'adult' => 'Contenuti per adulti',
+      'violence' => 'Violenza',
+      'spoof' => 'Falsificazione',
+      'racy' => 'Razzismo',
+      'medical' => 'Contenuti sensibili',
+      'noLabels' => 'Non ci sono etichette',
+
+
 ];
