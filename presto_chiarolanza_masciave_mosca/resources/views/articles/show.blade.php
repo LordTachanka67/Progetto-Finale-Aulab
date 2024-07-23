@@ -29,7 +29,7 @@
 
                 <div class="col-12 col-md-4 p-3 text-center">
                     {{-- TITOLO --}}
-                    <h2 class="display-3 article-text">{{ $article->title }}</h2>  
+                    <h2 class="display-5 article-text">{{ $article->title }}</h2>  
                     {{-- PREFERITI --}}
                     <span class="text-center">
                         @auth

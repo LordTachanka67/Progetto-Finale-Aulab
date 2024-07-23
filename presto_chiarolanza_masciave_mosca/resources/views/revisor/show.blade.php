@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-12 col-md-4 p-3 text-center">
                     {{-- TITOLO --}}
-                    <h2 class="display-3 article-text">{{ $article->title }}</h2>
+                    <h2 class="display-5 article-text">{{ $article->title }}</h2>
                     {{-- CATEGORIA E NOME UTENTE VENDITORE --}}
                     <h6 class="mb-5"><span class="badge me-3"><a>{{ $article->category->name }}</a></span>
                         <span class="badge me-3">{{ __('ui.vendutoDa') }}: {{ $article->user->name }}</span>
