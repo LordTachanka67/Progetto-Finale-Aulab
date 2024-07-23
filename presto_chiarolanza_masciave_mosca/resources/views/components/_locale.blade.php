@@ -4,3 +4,5 @@
         <img src="{{asset('vendor/blade-flags/language-' . $lang . '.svg')}}" width="32" height="32" alt="flag">
     </button>
 </form>
+
+

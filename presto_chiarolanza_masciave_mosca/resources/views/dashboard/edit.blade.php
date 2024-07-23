@@ -2,8 +2,8 @@
 
     <x-masthead h1="{{__('ui.modificaArticolo')}}" />
 
-    {{-- <livewire:edit-article-form :article="$article"
-     /> --}}
+    <livewire:edit-article-form :article="$article"
+     />
 
      {{-- @livewire('edit-article-form', ['article' => $article]) --}}
 
@@ -12,7 +12,7 @@
 
 
 
-    <div class="container">
+    {{-- <div class="container">
         <a class="btn btn-quar mb-3" href="{{ route('dashboard.index') }}"><i class="bi bi-arrow-bar-left"></i> {{__('ui.tornaDashboard')}}</a>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10">
@@ -59,7 +59,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 </x-layout>

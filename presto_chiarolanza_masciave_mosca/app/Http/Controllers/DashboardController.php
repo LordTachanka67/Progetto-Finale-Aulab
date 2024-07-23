@@ -34,8 +34,9 @@ class DashboardController extends Controller
         if(Auth::id() != $article->user_id) {
             return redirect()->route('dashboard.index')->with('danger', __('ui.autorizzatoModifica'));
         }
+        $images = $article->images();
 
-        return view('dashboard.edit', compact('article'));
+        return view('dashboard.edit', compact('article', 'images'));
     }
 
     function update(Request $request, Article $article)
