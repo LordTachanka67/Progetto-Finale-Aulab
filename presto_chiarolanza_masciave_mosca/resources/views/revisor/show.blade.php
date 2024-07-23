@@ -29,20 +29,16 @@
                     <div class="row my-5 justify-content-center">
                         <div class="col-6 col-md-4 text-center">
                             
-                            
                             <form  action="{{ route('article.reject', ['article' => $article]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-
-
                                 <button type="" class="btn btn-danger py-2 px-3 fs-3">
                                     <i class="bi bi-x-lg"></i>
                                 </button>
-
-                                <div class="d-none" >
-                                    <label for="">Motivo del rifiuto</label>
-                                    <textarea name="reason" id="" cols="30" rows="10"></textarea>
-                                </div>
+                                {{-- <div class="my-3" >
+                                    <label for="reasonTextArea">Commento</label>
+                                    <textarea id="reasonTextArea" class="form-control" name="reason" cols="30" rows="2"></textarea>
+                                </div> --}}
 
                                
                             </form>

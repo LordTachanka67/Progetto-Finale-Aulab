@@ -2,10 +2,10 @@
 
     <x-masthead h1="{{__('ui.modificaArticolo')}}" />
 
-    <livewire:edit-article-form :article="$article"
-     />
+    {{-- <livewire:edit-article-form :article="$article" --}}
+     {{-- /> --}}
 
-     {{-- @livewire('edit-article-form', ['article' => $article]) --}}
+     @livewire('edit-article-form', ['article' => $article, 'oldImages' => $oldImages])
 
      
     

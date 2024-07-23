@@ -33,10 +33,10 @@
                             €{{ number_format($article->price, 2, ',') }} </h3>
                     </div>
 
-                    <div>
+                    {{-- <div>
                         <h3 class="text-danger">MOTIVO DEL RIFIUTO</h3>
                         <p>{{ $article->reason }}</p>
-                    </div>
+                    </div> --}}
                 </div>
                 {{-- DESCRIZIONE --}}
                 <div class="col-12 mt-3 bg-quar">

@@ -29,6 +29,7 @@ class EditArticleForm extends Component
     public $category_id;
     public $article;
     public $images = [];
+    public $oldImages =[];
 
     public function mount(Article $article)
     {
@@ -38,6 +39,10 @@ class EditArticleForm extends Component
         $this->price = $article->price;
         $this->category_id = $article->category_id;
         $this->images = $article->images;
+        $this->oldImages = $article->oldImages;
+
+        // $this->oldImages = $article->images()->get()->toArray();
+
        /*  $this->images = $article->images(); */
     }
 

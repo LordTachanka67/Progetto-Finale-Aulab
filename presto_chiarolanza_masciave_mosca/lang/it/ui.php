@@ -80,7 +80,7 @@ return [
       'registrati' => 'Registrati',
       'cancella' => 'Cancella',
       'creaArticolo' => 'Crea un nuovo articolo',
-      'modificaArticolo' => 'Modifica l\'articolo',
+      'modificaArticolo' => 'Modifica articolo',
       'tuttiArticoli' => 'Tutti gli articoli',
       'risultatiRicerca' => 'Risultati della ricerca',
       'aggiungiAl' => 'Aggiungi al ',

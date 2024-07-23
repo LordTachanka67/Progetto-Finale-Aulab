@@ -55,6 +55,30 @@
                          @enderror
                      </div>
  
+                     {{-- IMMAGINI NEL DB --}}
+                     {{-- @dd($oldImages) --}}
+                     @if (!empty($oldImages))
+                         <div class="row d-flex">
+                             <div class="col-12 mt-2">
+                                 {{-- <p>{{ __('ui.anteprima') }}:</p> --}}
+                                 <p>{{ __('ui.ciSono') }} {{ count($oldImages) }} {{ __('ui.immagini') }}</p>
+                             </div>
+                             <div class="row">
+                                 @foreach ($oldImages as $key => $oldImage)
+                                     {{-- @dd($key) --}}
+                                     <div class="mb-3 col-3">
+                                         <div class="img-preview"
+                                             style="background-image: url({{ Storage::url($oldImage->path) }})">
+                                             <button class="btn btn-quar bg-main" type="button"
+                                                 wire:click="removeImage({{ $key }})"><i
+                                                     class="bi bi-x-lg"></i></button>
+                                         </div>
+                                     </div>
+                                 @endforeach
+                             </div>
+                         </div>
+                     @endif
+
                      {{--  IMMAGINI --}}
                      <div class="mb-3">
                          <label for="imageUpload" class="form-label">{{ __('ui.carica') }}</label>
@@ -67,30 +91,7 @@
                              <p class="text-danger">{{ $message }}</p>
                          @enderror
                      </div>
-                     @if (!empty($images))
-                         {{-- @dd($images) --}}
-                         <div class="row d-flex">
-                             <div class="col-12 mt-2">
-                                 <p>{{ __('ui.anteprima') }}:</p>
-                                 <p>{{ __('ui.haiSelezionato') }} {{ count($images) }} {{ __('ui.immagini') }}</p>
-                             </div>
-                             <div class="row">
-                                 @foreach ($images as $key => $image)
-                                     {{-- @dd($key) --}}
-                                     <div class="mb-3 col-3">
-                                         <div class="img-preview"
-                                             style="background-image: url({{ Storage::url($image->path) }})">
-                                             <button class="btn btn-quar bg-main" type="button"
-                                                 wire:click="removeImage({{ $key }})"><i
-                                                     class="bi bi-x-lg"></i></button>
-                                         </div>
-                                     </div>
-                                 @endforeach
-                             </div>
-                         </div>
- 
- 
-                     @endif
+
                      <button type="submit" class="btn btn-quar">{{ __('ui.inserisci') }}</button>
                  </form>
              </div>
