@@ -38,7 +38,7 @@ return [
   "prezzo" => "Precio",
   "home" => "Inicio",
   "lavoraConNoi" => "Trabaja con nosotros",
-  "about" => "Acerca de",
+  "about" => "El equipo",
   'language' => 'ES',
   'preferiti' => 'Favoritos',
   'recensioni' => 'Opiniones',

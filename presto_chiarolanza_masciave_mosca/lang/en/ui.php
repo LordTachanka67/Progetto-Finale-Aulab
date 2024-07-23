@@ -40,7 +40,7 @@ return [
   "prezzo" => "Price",
   "home" => "Home",
   "lavoraConNoi" => "Work with us",
-  "about" => "About",
+  "about" => "About us",
   'language' => 'EN',
   'preferiti' => 'Favorites',
   'recensioni' => 'Reviews',

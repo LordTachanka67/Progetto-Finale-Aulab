@@ -42,7 +42,7 @@ return [
       "prezzo" => "Prezzo",
       "home" => "Home",
       "lavoraConNoi" => "Lavora con noi",
-      "about" => "About",
+      "about" => "Il team",
       'language' => 'IT',
       'preferiti' => 'Preferiti',
       'recensioni' => 'Recensioni',
