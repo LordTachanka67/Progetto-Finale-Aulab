@@ -1,6 +1,6 @@
 <div class="card-dashboard mb-3">
     <div class="card-info position-relative">
-        <img src="{{ $article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : '/background/default.jpg' }}"
+        <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(400, 400) : '/background/default.jpg' }}"
             class=" card-img-top" alt="{{ $article->title }}">
         <div class="dash-card-title">{{ $article->title }}
             <span class="text-danger position-absolute end-0 d-none">

@@ -6,6 +6,7 @@
 <!-- COMANDI UTILI -->
 # php artisan optimize:clear
 # php artisan migrate
+# php artisan db:seed CategorySeeder
 
 
 <!-- COMANDI CUSTOM -->
