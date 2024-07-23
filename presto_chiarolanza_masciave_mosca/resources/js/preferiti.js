@@ -14,9 +14,6 @@ function switchIndex() {
     }
 }
 
-SWITCH.addEventListener('click', switchIndex);
-/* preferiti.addEventListener('click', addFavorite()); */
-
 document.addEventListener("DOMContentLoaded", function() {
     // Genera una chiave univoca basata sull'URL della pagina
     const scrollKey = `scrollPosition_${window.location.pathname}`;

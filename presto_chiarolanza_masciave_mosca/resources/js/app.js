@@ -4,7 +4,6 @@ import './greetingMessage';
 import './preferiti.js';
 
 
-
 import 'aos/dist/aos.css'; // Importa il file CSS di AOS
 
 
