@@ -25,7 +25,7 @@ class ArticleCreateRequest extends FormRequest
             /* TITOLO */
             'title.required' => 'Il titolo è obbligatorio',
             'title.min:5' => 'Il titolo deve avere almeno 5 caratteri',
-            
+
             /* DESCRIZIOME */
             'description.required' => 'La descrizione è obbligatoria',
             'description.text' => 'La descrizione deve essere un testo',

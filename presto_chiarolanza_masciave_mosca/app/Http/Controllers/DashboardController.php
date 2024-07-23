@@ -31,7 +31,7 @@ class DashboardController extends Controller
     function edit(Article $article)
     {
         /* VERIFICA SE L'UTENTE E' AUTORIZZATO A MODIFICARE L'ARTICOLO */
-        if(Auth::id() != $article->user_id) {
+        if (Auth::id() != $article->user_id) {
             return redirect()->route('dashboard.index')->with('danger', __('ui.autorizzatoModifica'));
         }
         $oldImages = $article->images();
@@ -42,7 +42,7 @@ class DashboardController extends Controller
     function update(Request $request, Article $article)
     {
         /* VERIFICA SE L'UTENTE E' AUTORIZZATO A MODIFICARE L'ARTICOLO */
-        if(Auth::id() != $article->user_id) {
+        if (Auth::id() != $article->user_id) {
             return redirect()->route('dashboard.index')->with('danger', __('ui.autorizzatoModifica'));
         }
         /* dd($request->all()); */
@@ -54,28 +54,31 @@ class DashboardController extends Controller
     function destroy(Article $article)
     {
         /* VERIFICA SE L'UTENTE E' AUTORIZZATO A MODIFICARE L'ARTICOLO */
-        if(Auth::id() != $article->user_id) {
+        if (Auth::id() != $article->user_id) {
             return redirect()->route('dashboard.index')->with('danger', __('ui.autorizzatoModifica'));
         }
         $article->delete();
         return redirect()->route('dashboard.index')->with('success', __('ui.articoloEliminato'));
     }
 
-    public function preferiti(){
+    public function preferiti()
+    {
         $pivotRecords = DB::table('article_user')
-    ->where('user_id', Auth::id())
-    ->get();
+            ->where('user_id', Auth::id())
+            ->get();
 
-    $favoritesArticles = Article::whereIn('id', $pivotRecords->pluck('article_id'))->paginate(6);
-    /* dd($favoritesArticles); */
+        $favoritesArticles = Article::whereIn('id', $pivotRecords->pluck('article_id'))->paginate(6);
+        /* dd($favoritesArticles); */
         return view('dashboard.preferiti', compact('favoritesArticles'));
     }
 
-    function cart(){
+    function cart()
+    {
         return view('dashboard.carrello');
     }
 
-    function feedbacks(){
+    function feedbacks()
+    {
         return view('dashboard.feedbacks');
     }
 }

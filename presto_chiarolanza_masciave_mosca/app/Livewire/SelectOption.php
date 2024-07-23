@@ -11,22 +11,21 @@ class SelectOption extends Component
     public $selectedOption;
     public $articles_pending = [];
 
-    
-        public function mount($articles_pending){
-            $this->articles_pending = $articles_pending;
-           
-        }
 
-        public function increment()
-        {
-            $this->selectedOption++;     
-            return $this->selectedOption;
-        }
-        
+    public function mount($articles_pending)
+    {
+        $this->articles_pending = $articles_pending;
+    }
 
-        public function render()
-        {
-            return view('livewire.select-option');
-        }
+    public function increment()
+    {
+        $this->selectedOption++;
+        return $this->selectedOption;
+    }
+
+
+    public function render()
+    {
+        return view('livewire.select-option');
+    }
 }
-

@@ -13,9 +13,10 @@ class Image extends Model
 
     protected $fillable = ['path'];
 
-    public static function getUrlByFilePath($filePath, $w = null, $h = null){
+    public static function getUrlByFilePath($filePath, $w = null, $h = null)
+    {
 
-        if(!$w && !$h){
+        if (!$w && !$h) {
             return Storage::url($filePath);
         }
 
@@ -25,7 +26,8 @@ class Image extends Model
         return Storage::url($file);
     }
 
-    public function getUrl($w = null, $h = null){
+    public function getUrl($w = null, $h = null)
+    {
         return self::getUrlByFilePath($this->path, $w, $h);
     }
 
@@ -34,7 +36,8 @@ class Image extends Model
         return $this->belongsTo(Article::class);
     }
 
-    protected function casts(): array{
+    protected function casts(): array
+    {
 
         return [
             'labels' => 'array',

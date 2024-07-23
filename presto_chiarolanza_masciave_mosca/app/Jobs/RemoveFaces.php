@@ -34,7 +34,7 @@ class RemoveFaces implements ShouldQueue
     public function handle()
     {
         $i = Image::find($this->article_image_id);
-        if (! $i) {
+        if (!$i) {
             return;
         }
         $srcPath = storage_path('app/public/' . $i->path);
@@ -52,7 +52,7 @@ class RemoveFaces implements ShouldQueue
             $bounds = [];
 
             foreach ($vertices as $vertex) {
-                $bounds[] = [$vertex->getX(), $vertex->getY()]; 
+                $bounds[] = [$vertex->getX(), $vertex->getY()];
             }
 
             $w = $bounds[2][0] - $bounds[0][0];

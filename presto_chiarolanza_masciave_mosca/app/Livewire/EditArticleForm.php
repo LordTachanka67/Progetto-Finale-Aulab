@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\File;
 class EditArticleForm extends Component
 {
     use WithFileUploads;
-    
+
     #[Validate('required', message: 'Il titolo è obbligatorio')]
     #[Validate('min:5', message: 'Il titolo deve avere almeno 5 caratteri')]
     #[Validate('max:255', message: 'Il titolo deve avere massimo 255 caratteri')]
@@ -29,7 +29,7 @@ class EditArticleForm extends Component
     public $category_id;
     public $article;
     public $images = [];
-    public $oldImages =[];
+    public $oldImages = [];
 
     public function mount(Article $article)
     {
@@ -43,7 +43,7 @@ class EditArticleForm extends Component
 
         // $this->oldImages = $article->images()->get()->toArray();
 
-       /*  $this->images = $article->images(); */
+        /*  $this->images = $article->images(); */
     }
 
     /* #[Validate('image')]  */
@@ -110,7 +110,7 @@ class EditArticleForm extends Component
 
     public function removeImage($key)
     {
-       /*  dd($key); */
+        /*  dd($key); */
         if (in_array($key, array_keys($this->article->images()->get()->toArray()))) {
             unset($this->images[$key]);
         }

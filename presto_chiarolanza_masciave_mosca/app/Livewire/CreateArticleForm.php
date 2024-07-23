@@ -52,7 +52,7 @@ class CreateArticleForm extends Component
     public function store()
     {
         $this->validate();
-       
+
         $this->article = Article::create([
             'title' => $this->title,
             'description' => $this->description,
@@ -73,7 +73,6 @@ class CreateArticleForm extends Component
                     new GoogleVisionSafeSearch($newImage->id),
                     new GoogleVisionLabelImage($newImage->id),
                 ])->dispatch($newImage->id);
-           
             }
             File::deleteDirectory(storage_path('app/livewire/tmp'));
         }

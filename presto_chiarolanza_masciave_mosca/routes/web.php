@@ -13,7 +13,7 @@ Route::get('/', function () {
 })->name('homepage');
 
 /* PUBLIC */
-Route::get('/',[PublicController::class , 'homepage'])->name('homepage');
+Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
 // TEAM
 Route::get('/team', [PublicController::class, 'team'])->name('team');
@@ -27,7 +27,7 @@ Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('s
 // SOCIAL
 Route::get('/instagram', [PublicController::class, 'instagram'])->name('instagram');
 
-Route::get('/user/{user}',[PublicController::class, 'showUser'])->name('show.user');
+Route::get('/user/{user}', [PublicController::class, 'showUser'])->name('show.user');
 
 /* ROTTE PER CATEGORIE */
 /* route::get('/categories/create',[ArticleController::class,'createCategory'])->name('categories.create'); */
@@ -41,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/store', 'store')->name('articles.store');
         Route::post('/preferiti/{article}', 'favourites')->name('articles.favourites');
         Route::post('/nopreferiti/{article}', 'unfavourites')->name('articles.unfavourites');
-    });   
+    });
 });
 
 Route::get('/articles/index', [ArticleController::class, 'index'])->name('articles.index');
@@ -53,12 +53,12 @@ Route::get('/lavora-con-noi', [MailController::class, 'revisorForm'])->name('rev
 Route::POST('/lavora-con-noi/invia', [MailController::class, 'revisorApplication'])->name('revisorApplication')->middleware('auth');
 
 /* REVISORE */
-Route::middleware(['auth','isRevisor'])->group(function () {
+Route::middleware(['auth', 'isRevisor'])->group(function () {
     Route::get('/make/revisor{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
     Route::get('/reject/revisor{user}', [RevisorController::class, 'rejectRevisor'])->name('reject.revisor');
     Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
     Route::get('/revisor/{article}', [RevisorController::class, 'show'])->name('revisor.show');
-    
+
     Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('article.reject');
     Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('article.accept');
     Route::patch('/cancel', [RevisorController::class, 'cancel'])->name('article.cancel');

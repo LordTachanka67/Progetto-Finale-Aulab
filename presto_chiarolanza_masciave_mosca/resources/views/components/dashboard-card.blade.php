@@ -5,7 +5,7 @@
         <div class="dash-card-title">{{ $article->title }}
             <span class="text-danger position-absolute end-0 d-none">
                 @if ($article->reason)
-                <i class="bi bi-info-circle"></i>
+                    <i class="bi bi-info-circle"></i>
                 @endif
             </span>
         </div>

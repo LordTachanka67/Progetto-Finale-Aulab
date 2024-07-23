@@ -22,10 +22,10 @@
                             </a>
                         </span>
                         <span class="badge me-3">{{ __('ui.vendutoDa') }}: {{ $article->user->name }}</span>
-                        
+
                     </h6>
 
-                    
+
 
                     {{-- PREZZO E BOTTONE AGGIUNGI AL CARRELLO --}}
                     <div class="d-flex flex-column align-items-center">

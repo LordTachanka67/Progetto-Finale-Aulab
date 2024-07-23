@@ -17,7 +17,7 @@ class RevisorApplication extends Mailable
     public $email;
     public $body;
     public $user;
-    
+
     /**
      * Create a new message instance.
      */

@@ -27,7 +27,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
     public function handle(): void
     {
         $i = Image::find($this->article_image_id);
-        if(!$i){
+        if (!$i) {
             return;
         }
 
@@ -62,6 +62,5 @@ class GoogleVisionSafeSearch implements ShouldQueue
         $i->racy = $likelihoodName[$racy];
 
         $i->save();
-
     }
 }

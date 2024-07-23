@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
-    public function revisorApplication(Request $request){
+    public function revisorApplication(Request $request)
+    {
 
         $email = $request->email;
         $body = $request->body;
@@ -22,7 +23,8 @@ class MailController extends Controller
         return redirect()->back()->with('success', __('ui.richiestaInviata'));
     }
 
-    public function revisorForm(){
+    public function revisorForm()
+    {
         return view('lavora-con-noi');
     }
 }

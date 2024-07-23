@@ -46,7 +46,8 @@ class Article extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function favourites(){
+    public function favourites()
+    {
         return $this->belongsToMany(User::class);
     }
 
@@ -55,7 +56,8 @@ class Article extends Model
         return $this->hasMany(Image::class);
     }
 
-    public function setAccepted($value){
+    public function setAccepted($value)
+    {
         $this->is_accepted = $value;
         $this->save();
         return true;

@@ -28,8 +28,8 @@
 
                     <div class="row my-5 justify-content-center">
                         <div class="col-6 col-md-4 text-center">
-                            
-                            <form  action="{{ route('article.reject', ['article' => $article]) }}" method="POST">
+
+                            <form action="{{ route('article.reject', ['article' => $article]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
                                 <button type="" class="btn btn-danger py-2 px-3 fs-3">
@@ -40,7 +40,7 @@
                                     <textarea id="reasonTextArea" class="form-control" name="reason" cols="30" rows="2"></textarea>
                                 </div> --}}
 
-                               
+
                             </form>
                         </div>
                         <div class="col-6 col-md-4 text-center">
@@ -62,7 +62,7 @@
                     <h5 class="mt-4 ms-3">{{ __('ui.descrizione') }}: </h5>
                     <p class="ms-5 mt-2 mb-5">{{ $article->description }}</p>
                 </div>
-                
+
             </div>
         </div>
     </div>

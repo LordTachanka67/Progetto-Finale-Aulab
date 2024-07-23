@@ -32,7 +32,7 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-  /*   public function store(ArticleCreateRequest $request)
+    /*   public function store(ArticleCreateRequest $request)
     {
         dd($request->all());
 
@@ -50,7 +50,7 @@ class ArticleController extends Controller
      * Display the specified resource.
      */
     public function show(Article $article)
-    {   
+    {
         $article_id = $article->id;
         $user_id = Auth::id();
         $exist = DB::table('article_user')->where('article_id', $article_id)->where('user_id', $user_id)->exists();
@@ -59,7 +59,7 @@ class ArticleController extends Controller
         } else {
             /* dd("non esiste"); */
         }
-    
+
         $correlated = Article::where('category_id', $article->category_id)->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(4);
         // dd($correlated);
         return view('articles.show', compact('article', 'correlated', 'exist'));
@@ -91,14 +91,14 @@ class ArticleController extends Controller
 
     public function favourites(Request $request, Article $article)
     {
-        
+
         $user = Auth::user();
         $article_id = $request->article_id;
         Auth::user()->favourites()->attach($request->favourites);
         return redirect()->back();
-            // CREARE LA COLONNA IS FAVOURITE BOOLEANA DEFAULT FALSE
-            // CREARE UN METODO PER AGGIUNGERE E RIMUOVERE IL FAVOURITE DALLA COLONNA
-            // INSERIRE LA ACTION NEL FORM
+        // CREARE LA COLONNA IS FAVOURITE BOOLEANA DEFAULT FALSE
+        // CREARE UN METODO PER AGGIUNGERE E RIMUOVERE IL FAVOURITE DALLA COLONNA
+        // INSERIRE LA ACTION NEL FORM
     }
 
     public function unfavourites(Request $request, Article $article)

@@ -16,7 +16,7 @@ class IsRevisor
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check() && Auth::user()->is_revisor){
+        if (Auth::check() && Auth::user()->is_revisor) {
             return $next($request);
         }
 

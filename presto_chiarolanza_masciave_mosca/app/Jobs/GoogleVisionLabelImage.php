@@ -15,16 +15,16 @@ class GoogleVisionLabelImage implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     private $article_image_id;
-    public function __construct( $article_image_id)
+    public function __construct($article_image_id)
     {
         $this->article_image_id = $article_image_id;
     }
 
-   
+
     public function handle(): void
     {
         $i = Image::find($this->article_image_id);
-        if(!$i){
+        if (!$i) {
             return;
         }
 
@@ -34,13 +34,13 @@ class GoogleVisionLabelImage implements ShouldQueue
         $response = $imageAnnotator->labelDetection($image);
         $labels = $response->getLabelAnnotations();
 
-        if($labels){
-           $result = [];
-           foreach($labels as $label){
-               $result[] = $label->getDescription();
-           }
-           $i->labels =$result;
-           $i->save();
+        if ($labels) {
+            $result = [];
+            foreach ($labels as $label) {
+                $result[] = $label->getDescription();
+            }
+            $i->labels = $result;
+            $i->save();
         }
         $imageAnnotator->close();
     }
